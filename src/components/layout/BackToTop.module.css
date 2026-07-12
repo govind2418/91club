@@ -1,0 +1,28 @@
+.btn {
+  position: fixed;
+  bottom: 96px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-accent);
+  font-size: 18px;
+  z-index: 90;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: var(--color-card-hover);
+}
+
+@media (max-width: 640px) {
+  .btn {
+    bottom: 150px;
+    width: 40px;
+    height: 40px;
+  }
+}

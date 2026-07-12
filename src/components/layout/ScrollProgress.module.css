@@ -1,0 +1,15 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 200;
+  background: transparent;
+}
+
+.bar {
+  height: 100%;
+  background: var(--gradient-gold);
+  transition: width 0.1s linear;
+}

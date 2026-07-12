@@ -1,0 +1,35 @@
+.breadcrumb {
+  padding: 18px 0;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-faint);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumb span[aria-current='page'] {
+  color: var(--color-accent);
+}
+
+.sep {
+  color: var(--color-text-faint);
+}
