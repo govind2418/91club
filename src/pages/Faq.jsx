@@ -78,7 +78,7 @@ export default function Faq() {
   return (
     <>
       <SEO
-        title="91 Club FAQ - Answers to Common Questions"
+        title="91 Club FAQ (91clubfaq) - Answers to Common Questions"
         description="Find answers to the most common 91 Club questions, organized by account, games, payments and security."
         path="/91-club-faq"
         schemas={[

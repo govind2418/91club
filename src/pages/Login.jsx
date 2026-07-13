@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema, buildHowToSchema } from '../components/seo/SEO.jsx';
 import PageHero from '../components/ui/PageHero.jsx';
 import Section from '../components/ui/Section.jsx';
 import ComparisonTable from '../components/ui/ComparisonTable.jsx';
@@ -40,6 +40,30 @@ const faqs = [
     question: 'Is it safe to log in on public Wi-Fi?',
     answer:
       'The connection itself is encrypted, but we generally advise against entering account credentials on open public networks whenever a private connection is available.'
+  },
+  {
+    question: 'I searched "91club login" - is this the right page?',
+    answer:
+      'Yes. Whether you type "91 club login" or "91club login," both searches lead to the same official sign-in page and the same account system.'
+  }
+];
+
+const loginSteps = [
+  {
+    title: 'Open the Login Page',
+    text: 'Visit the 91 Club login screen from your browser or from the installed app shortcut.'
+  },
+  {
+    title: 'Enter Your Details',
+    text: 'Type in your registered mobile number and the password you created during sign-up.'
+  },
+  {
+    title: 'Verify If Prompted',
+    text: 'If it is a new device, confirm the one-time code sent to your registered number.'
+  },
+  {
+    title: 'Start Playing',
+    text: 'Once verified, you land on your dashboard with your balance and active games ready to go.'
   }
 ];
 
@@ -47,19 +71,24 @@ export default function Login() {
   return (
     <>
       <SEO
-        title="91 Club Login - Sign In To Your Account"
-        description="Learn how to complete your 91 Club login quickly and securely, fix common sign-in issues, and keep your account protected every time you play."
+        title="91 Club Login (91club Login) - Sign In To Your Account"
+        description="Learn how to complete your 91 Club login (91club login) quickly and securely, fix common sign-in issues, and keep your account protected every time you play."
         path="/91-club-login"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: '91 Club Login - Sign In To Your Account',
-            description: 'A complete guide to logging into 91 Club safely and resolving common sign-in problems.',
+            title: '91 Club Login (91club Login) - Sign In To Your Account',
+            description: 'A complete guide to logging into 91 Club, often searched as 91club login, safely and resolving common sign-in problems.',
             path: '/91-club-login'
           }),
           buildBreadcrumbSchema(breadcrumbItems),
-          buildFaqSchema(faqs)
+          buildFaqSchema(faqs),
+          buildHowToSchema({
+            name: 'How to log into 91 Club',
+            description: 'Step-by-step instructions for signing into your 91 Club account.',
+            steps: loginSteps
+          })
         ]}
       />
 
@@ -76,24 +105,7 @@ export default function Login() {
 
       <Section eyebrow="Step By Step" title="How to log into 91 Club">
         <div className={shared.stepGrid}>
-          {[
-            {
-              title: 'Open the Login Page',
-              text: 'Visit the 91 Club login screen from your browser or from the installed app shortcut.'
-            },
-            {
-              title: 'Enter Your Details',
-              text: 'Type in your registered mobile number and the password you created during sign-up.'
-            },
-            {
-              title: 'Verify If Prompted',
-              text: 'If it is a new device, confirm the one-time code sent to your registered number.'
-            },
-            {
-              title: 'Start Playing',
-              text: 'Once verified, you land on your dashboard with your balance and active games ready to go.'
-            }
-          ].map((step, index) => (
+          {loginSteps.map((step, index) => (
             <div className={shared.step} key={step.title}>
               <div className={shared.stepNumber}>{index + 1}</div>
               <h3>{step.title}</h3>

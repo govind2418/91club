@@ -44,7 +44,7 @@ export default function Vip() {
   return (
     <>
       <SEO
-        title="91 Club VIP - Membership Tiers and Exclusive Perks"
+        title="91 Club VIP (91clubvip) - Membership Tiers and Exclusive Perks"
         description="See how the 91 Club VIP tier system works, what perks unlock at each level, and how your status is calculated."
         path="/91-club-vip"
         schemas={[

@@ -42,7 +42,7 @@ export default function Guide() {
   return (
     <>
       <SEO
-        title="91 Club Guide - A Complete Beginner's Walkthrough"
+        title="91 Club Guide (91clubguide) - A Complete Beginner's Walkthrough"
         description="New to 91 Club? This beginner's guide walks through registration, deposits, your first game and withdrawals from start to finish."
         path="/91-club-guide"
         schemas={[

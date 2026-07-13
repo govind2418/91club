@@ -43,7 +43,7 @@ export default function Referral() {
   return (
     <>
       <SEO
-        title="91 Club Referral - Earn by Inviting Friends"
+        title="91 Club Referral (91clubreferral) - Earn by Inviting Friends"
         description="See how the 91 Club referral program works, how commission is calculated, and how to track your referral earnings."
         path="/91-club-referral"
         schemas={[

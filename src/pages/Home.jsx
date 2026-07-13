@@ -46,6 +46,11 @@ const faqs = [
     question: 'How fast are withdrawals processed?',
     answer:
       'Most withdrawal requests are reviewed and released within minutes during standard support hours, though processing times can vary depending on your payment provider and verification status.'
+  },
+  {
+    question: 'Is "91club" the same as "91 Club"?',
+    answer:
+      'Yes. "91club" is simply how many players type our name into search bars without the space. Both refer to the same platform, the same account system, and the same games.'
   }
 ];
 
@@ -77,16 +82,16 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="91 Club - Premium Colour Prediction & Gaming Platform"
-        description="91 Club is a premium online gaming platform offering colour prediction, lottery, aviator and slot games with fast withdrawals, VIP rewards and 24/7 support."
+        title="91 Club (91club) - Premium Colour Prediction & Gaming Platform"
+        description="91 Club (91club) is a premium online gaming platform offering colour prediction, lottery, aviator and slot games with fast withdrawals, VIP rewards and 24/7 support."
         path="/"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: '91 Club - Premium Colour Prediction & Gaming Platform',
+            title: '91 Club (91club) - Premium Colour Prediction & Gaming Platform',
             description:
-              '91 Club is a premium online gaming platform offering colour prediction, lottery, aviator and slot games.',
+              '91 Club, often searched as 91club, is a premium online gaming platform offering colour prediction, lottery, aviator and slot games.',
             path: '/'
           }),
           buildFaqSchema(faqs)

@@ -46,7 +46,7 @@ export default function ColourPrediction() {
   return (
     <>
       <SEO
-        title="91 Club Colour Prediction - Rules, Rounds and Strategy Basics"
+        title="91 Club Colour Prediction (91clubcolourprediction) - Rules, Rounds and Strategy Basics"
         description="See how 91 Club colour prediction rounds work, how long they last, and grounded tips for playing within a responsible budget."
         path="/91-club-colour-prediction"
         schemas={[

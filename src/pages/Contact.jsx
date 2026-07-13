@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="91 Club Contact - Reach Our Team"
+        title="91 Club Contact (91clubcontact) - Reach Our Team"
         description="Contact 91 Club through live chat, Telegram, email or our contact form. Find the right channel for your question."
         path="/91-club-contact"
         schemas={[

@@ -36,6 +36,11 @@ const faqs = [
   {
     question: 'Is there a mobile-friendly way to browse all games?',
     answer: 'Yes, the games hub is fully optimized for mobile browsing with quick category filters.'
+  },
+  {
+    question: 'Where can I find 91club games specifically?',
+    answer:
+      'This directory covers every 91club games category in one place. "91 Club games" and "91club games" both point to the same colour prediction, lottery, aviator and slots library.'
   }
 ];
 
@@ -66,15 +71,15 @@ export default function Games() {
   return (
     <>
       <SEO
-        title="91 Club Games - Explore the Full Game Directory"
-        description="Browse every 91 Club game category in one place, from colour prediction to lottery, aviator and slots, and find the right fit for your play style."
+        title="91 Club Games (91club Games) - Explore the Full Game Directory"
+        description="Browse every 91 Club games (91club games) category in one place, from colour prediction to lottery, aviator and slots, and find the right fit for your play style."
         path="/91-club-games"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: '91 Club Games - Explore the Full Game Directory',
-            description: 'A directory of every game category available on 91 Club.',
+            title: '91 Club Games (91club Games) - Explore the Full Game Directory',
+            description: 'A directory of every game category available on 91 Club, also searched as 91club games.',
             path: '/91-club-games'
           }),
           buildBreadcrumbSchema(breadcrumbItems),

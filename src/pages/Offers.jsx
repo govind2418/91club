@@ -45,7 +45,7 @@ export default function Offers() {
   return (
     <>
       <SEO
-        title="91 Club Offers - Current Deposit Deals and Limited-Time Deals"
+        title="91 Club Offers (91cluboffers) - Current Deposit Deals and Limited-Time Deals"
         description="Browse current 91 Club deposit offers, understand how opt-in works, and see how offers differ from standing bonuses and promotions."
         path="/91-club-offers"
         schemas={[

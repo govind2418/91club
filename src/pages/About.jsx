@@ -38,14 +38,14 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About 91 Club - Our Platform and Philosophy"
-        description="Learn about 91 Club's approach to gaming, our focus on speed, transparency and player security, and what drives the platform forward."
+        title="About 91 Club (91club) - Our Platform and Philosophy"
+        description="Learn about 91 Club's approach to gaming, also searched as 91club, our focus on speed, transparency and player security, and what drives the platform forward."
         path="/about-91-club"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: 'About 91 Club - Our Platform and Philosophy',
+            title: 'About 91 Club (91club) - Our Platform and Philosophy',
             description: 'An introduction to 91 Club, our values and our approach to online gaming.',
             path: '/about-91-club'
           }),

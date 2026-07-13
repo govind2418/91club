@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema, buildHowToSchema } from '../components/seo/SEO.jsx';
 import PageHero from '../components/ui/PageHero.jsx';
 import Section from '../components/ui/Section.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
@@ -39,26 +39,44 @@ const faqs = [
     question: 'Can I have more than one account?',
     answer:
       'No, each person is permitted a single account. Duplicate accounts may be suspended during routine security checks.'
+  },
+  {
+    question: 'Does "91club register" work the same as "91 Club register"?',
+    answer:
+      'Yes, both phrases describe the exact same sign-up process. There is only one registration system, regardless of how you type the name.'
   }
+];
+
+const registerSteps = [
+  { title: 'Open the Register Page', text: 'Head to the registration screen from any device.' },
+  { title: 'Enter Your Mobile Number', text: 'This becomes your primary login identifier going forward.' },
+  { title: 'Set a Strong Password', text: 'Choose a password you have not used elsewhere for better security.' },
+  { title: 'Add an Invite Code (Optional)', text: 'Enter a friend’s invite code to unlock linked bonuses.' },
+  { title: 'Verify and Confirm', text: 'Confirm the one-time code sent to your number to activate the account.' }
 ];
 
 export default function Register() {
   return (
     <>
       <SEO
-        title="91 Club Register - Create Your Free Account"
-        description="Register on 91 Club in under a minute. See what you need, what you get with your welcome bonus, and how account verification works."
+        title="91 Club Register (91club Register) - Create Your Free Account"
+        description="Register on 91 Club (91club register) in under a minute. See what you need, what you get with your welcome bonus, and how account verification works."
         path="/91-club-register"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: '91 Club Register - Create Your Free Account',
-            description: 'Step-by-step 91 Club registration guide covering requirements, bonuses and verification.',
+            title: '91 Club Register (91club Register) - Create Your Free Account',
+            description: 'Step-by-step 91 Club registration guide, also searched as 91club register, covering requirements, bonuses and verification.',
             path: '/91-club-register'
           }),
           buildBreadcrumbSchema(breadcrumbItems),
-          buildFaqSchema(faqs)
+          buildFaqSchema(faqs),
+          buildHowToSchema({
+            name: 'How to register on 91 Club',
+            description: 'Step-by-step instructions for creating a new 91 Club account.',
+            steps: registerSteps
+          })
         ]}
       />
 
@@ -104,13 +122,7 @@ export default function Register() {
 
       <Section eyebrow="Sign-Up Process" title="How registration works, step by step">
         <div className={shared.stepGrid}>
-          {[
-            { title: 'Open the Register Page', text: 'Head to the registration screen from any device.' },
-            { title: 'Enter Your Mobile Number', text: 'This becomes your primary login identifier going forward.' },
-            { title: 'Set a Strong Password', text: 'Choose a password you have not used elsewhere for better security.' },
-            { title: 'Add an Invite Code (Optional)', text: 'Enter a friend’s invite code to unlock linked bonuses.' },
-            { title: 'Verify and Confirm', text: 'Confirm the one-time code sent to your number to activate the account.' }
-          ].map((step, index) => (
+          {registerSteps.map((step, index) => (
             <div className={shared.step} key={step.title}>
               <div className={shared.stepNumber}>{index + 1}</div>
               <h3>{step.title}</h3>

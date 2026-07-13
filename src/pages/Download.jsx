@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildSoftwareApplicationSchema,
+  buildHowToSchema
+} from '../components/seo/SEO.jsx';
 import PageHero from '../components/ui/PageHero.jsx';
 import Section from '../components/ui/Section.jsx';
 import ComparisonTable from '../components/ui/ComparisonTable.jsx';
@@ -37,26 +43,48 @@ const faqs = [
   {
     question: 'Can I remove the app later?',
     answer: 'Yes, you can uninstall it like any other app at any time without affecting your 91 Club account.'
+  },
+  {
+    question: 'Is the "91club download" the same file as "91 Club download"?',
+    answer:
+      'Yes. Both terms lead to the identical, official installation file on this page. There is no separate "91club" version.'
   }
+];
+
+const downloadSteps = [
+  { title: 'Visit the Download Page', text: 'Open this page on the mobile device you plan to play from.' },
+  { title: 'Tap Download', text: 'Start the file transfer and allow it to finish over a stable connection.' },
+  { title: 'Allow Installation', text: 'Approve the one-time permission to install apps from this source.' },
+  { title: 'Open and Log In', text: 'Launch the installed app and sign in with your existing account.' }
 ];
 
 export default function Download() {
   return (
     <>
       <SEO
-        title="91 Club Download - Get the App for Android"
-        description="Download 91 Club to your device for a faster, home-screen gaming experience. Follow our step-by-step download and installation guide."
+        title="91 Club Download (91club Download) - Get the App for Android"
+        description="Download 91 Club (91club download) to your device for a faster, home-screen gaming experience. Follow our step-by-step download and installation guide."
         path="/91-club-download"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: '91 Club Download - Get the App for Android',
-            description: 'Everything you need to download and install 91 Club on your device.',
+            title: '91 Club Download (91club Download) - Get the App for Android',
+            description: 'Everything you need to download and install 91 Club, also searched as 91club download, on your device.',
             path: '/91-club-download'
           }),
           buildBreadcrumbSchema(breadcrumbItems),
-          buildFaqSchema(faqs)
+          buildFaqSchema(faqs),
+          buildSoftwareApplicationSchema({
+            name: '91 Club',
+            description: 'Download the 91 Club gaming platform for a faster, app-like experience.',
+            path: '/91-club-download'
+          }),
+          buildHowToSchema({
+            name: 'How to download and install 91 Club',
+            description: 'Step-by-step instructions for downloading 91 Club to your device.',
+            steps: downloadSteps
+          })
         ]}
       />
 
@@ -99,12 +127,7 @@ export default function Download() {
 
       <Section eyebrow="Download Guide" title="How to download and install 91 Club">
         <div className={shared.stepGrid}>
-          {[
-            { title: 'Visit the Download Page', text: 'Open this page on the mobile device you plan to play from.' },
-            { title: 'Tap Download', text: 'Start the file transfer and allow it to finish over a stable connection.' },
-            { title: 'Allow Installation', text: 'Approve the one-time permission to install apps from this source.' },
-            { title: 'Open and Log In', text: 'Launch the installed app and sign in with your existing account.' }
-          ].map((step, index) => (
+          {downloadSteps.map((step, index) => (
             <div className={shared.step} key={step.title}>
               <div className={shared.stepNumber}>{index + 1}</div>
               <h3>{step.title}</h3>

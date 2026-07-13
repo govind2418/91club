@@ -42,7 +42,7 @@ export default function Support() {
   return (
     <>
       <SEO
-        title="91 Club Support - Get Help Fast"
+        title="91 Club Support (91clubsupport) - Get Help Fast"
         description="Reach 91 Club support through live chat, Telegram or email. See typical response times and what to include in your request."
         path="/91-club-support"
         schemas={[

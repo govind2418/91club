@@ -44,7 +44,7 @@ export default function Lottery() {
   return (
     <>
       <SEO
-        title="91 Club Lottery - Draw Schedule and How to Play"
+        title="91 Club Lottery (91clublottery) - Draw Schedule and How to Play"
         description="Learn how 91 Club lottery draws are scheduled, how to pick numbers, and when results and winnings are settled."
         path="/91-club-lottery"
         schemas={[

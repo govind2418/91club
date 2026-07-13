@@ -42,7 +42,7 @@ export default function Promotions() {
   return (
     <>
       <SEO
-        title="91 Club Promotions - Seasonal Campaigns and Tournaments"
+        title="91 Club Promotions (91clubpromotions) - Seasonal Campaigns and Tournaments"
         description="Discover current and upcoming 91 Club promotions, including leaderboard tournaments, seasonal campaigns and community events."
         path="/91-club-promotions"
         schemas={[

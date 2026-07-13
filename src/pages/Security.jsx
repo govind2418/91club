@@ -43,7 +43,7 @@ export default function Security() {
   return (
     <>
       <SEO
-        title="91 Club Security - How Your Account Is Protected"
+        title="91 Club Security (91clubsecurity) - How Your Account Is Protected"
         description="Learn how 91 Club protects accounts and transactions, and what steps you can take to keep your own account secure."
         path="/91-club-security"
         schemas={[

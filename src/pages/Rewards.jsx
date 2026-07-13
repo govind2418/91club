@@ -44,7 +44,7 @@ export default function Rewards() {
   return (
     <>
       <SEO
-        title="91 Club Rewards - Bonuses, VIP Perks and Referral Earnings"
+        title="91 Club Rewards (91clubrewards) - Bonuses, VIP Perks and Referral Earnings"
         description="See every way to earn rewards on 91 Club, from welcome bonuses to VIP tier perks and referral commissions."
         path="/91-club-rewards"
         schemas={[

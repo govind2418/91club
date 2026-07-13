@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildSoftwareApplicationSchema
+} from '../components/seo/SEO.jsx';
 import PageHero from '../components/ui/PageHero.jsx';
 import Section from '../components/ui/Section.jsx';
 import ComparisonTable from '../components/ui/ComparisonTable.jsx';
@@ -39,6 +44,11 @@ const faqs = [
     question: 'Is the app available for iPhone?',
     answer:
       'iPhone users can access the full experience through the mobile browser and add it to their home screen for an app-like shortcut.'
+  },
+  {
+    question: 'Is the 91club app different from the 91 Club app?',
+    answer:
+      '"91club app" and "91 Club app" refer to the exact same application. The spacing is just a typing habit, and both lead to the identical download and login experience.'
   }
 ];
 
@@ -46,19 +56,24 @@ export default function AppPage() {
   return (
     <>
       <SEO
-        title="91 Club App - Full Gaming Experience on Your Phone"
-        description="Explore everything the 91 Club app offers, from game access to wallet management, and see how it compares to playing on the website."
+        title="91 Club App (91club App) - Full Gaming Experience on Your Phone"
+        description="Explore everything the 91 Club app (91club app) offers, from game access to wallet management, and see how it compares to playing on the website."
         path="/91-club-app"
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
           buildWebPageSchema({
-            title: '91 Club App - Full Gaming Experience on Your Phone',
-            description: 'A full overview of the 91 Club app, its features, and how it compares to the website.',
+            title: '91 Club App (91club App) - Full Gaming Experience on Your Phone',
+            description: 'A full overview of the 91 Club app, also searched as the 91club app, its features, and how it compares to the website.',
             path: '/91-club-app'
           }),
           buildBreadcrumbSchema(breadcrumbItems),
-          buildFaqSchema(faqs)
+          buildFaqSchema(faqs),
+          buildSoftwareApplicationSchema({
+            name: '91 Club App',
+            description: 'The 91 Club gaming app for colour prediction, lottery, aviator and slots with wallet and VIP tracking.',
+            path: '/91-club-app'
+          })
         ]}
       />
 
@@ -66,7 +81,7 @@ export default function AppPage() {
         breadcrumbItems={breadcrumbItems}
         eyebrow="The 91 Club App"
         title="91 Club App: Every Game and Feature in One Place"
-        intro="The 91 Club app brings the full platform, games, wallet, rewards and support, into a dedicated home-screen experience built for quick daily play."
+        intro="The 91 Club app, also known as the 91club app, brings the full platform, games, wallet, rewards and support, into a dedicated home-screen experience built for quick daily play."
         primaryLabel="Register Now"
         secondaryLabel="Download the App"
         secondaryHref="/91-club-download"

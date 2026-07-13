@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildSoftwareApplicationSchema,
+  buildHowToSchema
+} from '../components/seo/SEO.jsx';
 import PageHero from '../components/ui/PageHero.jsx';
 import Section from '../components/ui/Section.jsx';
 import ComparisonTable from '../components/ui/ComparisonTable.jsx';
@@ -43,11 +49,18 @@ const faqs = [
   }
 ];
 
+const installSteps = [
+  { title: 'Download the File', text: 'Get the APK directly from the official 91 Club download page.' },
+  { title: 'Allow Unknown Sources', text: 'Approve the one-time Android prompt for this installation only.' },
+  { title: 'Run the Installer', text: 'Open the downloaded file and tap install, which takes under a minute.' },
+  { title: 'Log In and Play', text: 'Launch the app and sign in with your existing 91 Club account.' }
+];
+
 export default function Apk() {
   return (
     <>
       <SEO
-        title="91 Club APK - Download the Android Installation File"
+        title="91 Club APK (91clubapk) - Download the Android Installation File"
         description="Understand what the 91 Club APK is, how to install it safely on Android, and how it compares to playing directly in your browser."
         path="/91-club-apk"
         schemas={[
@@ -59,7 +72,17 @@ export default function Apk() {
             path: '/91-club-apk'
           }),
           buildBreadcrumbSchema(breadcrumbItems),
-          buildFaqSchema(faqs)
+          buildFaqSchema(faqs),
+          buildSoftwareApplicationSchema({
+            name: '91 Club APK',
+            description: 'Android installation file for the 91 Club gaming platform.',
+            path: '/91-club-apk'
+          }),
+          buildHowToSchema({
+            name: 'How to install the 91 Club APK',
+            description: 'Step-by-step instructions for downloading and installing the 91 Club Android APK.',
+            steps: installSteps
+          })
         ]}
       />
 
@@ -92,12 +115,7 @@ export default function Apk() {
 
       <Section eyebrow="Installation Guide" title="How to install the 91 Club APK">
         <div className={shared.stepGrid}>
-          {[
-            { title: 'Download the File', text: 'Get the APK directly from the official 91 Club download page.' },
-            { title: 'Allow Unknown Sources', text: 'Approve the one-time Android prompt for this installation only.' },
-            { title: 'Run the Installer', text: 'Open the downloaded file and tap install, which takes under a minute.' },
-            { title: 'Log In and Play', text: 'Launch the app and sign in with your existing 91 Club account.' }
-          ].map((step, index) => (
+          {installSteps.map((step, index) => (
             <div className={shared.step} key={step.title}>
               <div className={shared.stepNumber}>{index + 1}</div>
               <h3>{step.title}</h3>

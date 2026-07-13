@@ -46,7 +46,7 @@ export default function GiftCode() {
   return (
     <>
       <SEO
-        title="91 Club Gift Code - How to Find and Redeem Codes"
+        title="91 Club Gift Code (91clubgiftcode) - How to Find and Redeem Codes"
         description="Learn where 91 Club gift codes are released, how to redeem them correctly, and what to do if a code does not work."
         path="/91-club-gift-code"
         schemas={[

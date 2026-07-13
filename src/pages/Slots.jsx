@@ -44,7 +44,7 @@ export default function Slots() {
   return (
     <>
       <SEO
-        title="91 Club Slots - Browse the Full Game Library"
+        title="91 Club Slots (91clubslots) - Browse the Full Game Library"
         description="Explore the 91 Club slot library, understand how stake sizes and return percentages work, and find a title that matches your style."
         path="/91-club-slots"
         schemas={[

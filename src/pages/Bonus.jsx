@@ -45,7 +45,7 @@ export default function Bonus() {
   return (
     <>
       <SEO
-        title="91 Club Bonus - Welcome Offers and Ongoing Deposit Boosts"
+        title="91 Club Bonus (91clubbonus) - Welcome Offers and Ongoing Deposit Boosts"
         description="See the different types of 91 Club bonuses, how they are credited, and what conditions apply before you can withdraw them."
         path="/91-club-bonus"
         schemas={[

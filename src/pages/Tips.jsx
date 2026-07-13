@@ -42,7 +42,7 @@ export default function Tips() {
   return (
     <>
       <SEO
-        title="91 Club Tips - Grounded Habits for Smarter Sessions"
+        title="91 Club Tips (91clubtips) - Grounded Habits for Smarter Sessions"
         description="Practical, honest tips for playing 91 Club games responsibly, including budgeting, pacing and reading results without chasing patterns."
         path="/91-club-tips"
         schemas={[

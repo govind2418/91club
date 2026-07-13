@@ -45,7 +45,7 @@ export default function InviteCode() {
   return (
     <>
       <SEO
-        title="91 Club Invite Code - Use or Share a Referral Code"
+        title="91 Club Invite Code (91clubinvitecode) - Use or Share a Referral Code"
         description="Understand how 91 Club invite codes work, where to enter one during registration, and how sharing your own code earns rewards."
         path="/91-club-invite-code"
         schemas={[

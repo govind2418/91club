@@ -44,7 +44,7 @@ export default function Aviator() {
   return (
     <>
       <SEO
-        title="91 Club Aviator - How the Crash Game Works"
+        title="91 Club Aviator (91clubaviator) - How the Crash Game Works"
         description="Understand the 91 Club Aviator format: how the rising multiplier works, when to cash out, and how it compares to other game types."
         path="/91-club-aviator"
         schemas={[
