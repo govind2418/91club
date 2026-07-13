@@ -8,6 +8,7 @@ const distDir = resolve(root, 'dist');
 
 const { renderRoute } = await import(resolve(root, 'dist-ssr/entry-server.js'));
 const { routes, notFoundRoute } = await import(resolve(root, 'src/routes.js'));
+const { SITE_URL } = await import(resolve(root, 'src/data/siteConfig.js'));
 
 const template = readFileSync(resolve(distDir, 'index.html'), 'utf-8');
 
@@ -83,4 +84,49 @@ writeFileSync(resolve(distDir, '404.html'), notFoundHtml, 'utf-8');
 rmSync(resolve(root, 'dist-ssr'), { recursive: true, force: true });
 rmSync(resolve(distDir, '.vite'), { recursive: true, force: true });
 
+// Generate sitemap.xml and robots.txt from the live route list and SITE_URL so
+// they can never drift out of sync with the actual domain or page set again.
+const HIGH_PRIORITY = new Set(['/', '/91-club-login', '/91-club-register', '/91-club-colour-prediction']);
+const LOW_PRIORITY = new Set(['/privacy-policy', '/terms', '/responsible-gaming']);
+const today = new Date().toISOString().slice(0, 10);
+
+function priorityFor(path) {
+  if (path === '/') return '1.0';
+  if (HIGH_PRIORITY.has(path)) return '0.9';
+  if (LOW_PRIORITY.has(path)) return '0.3';
+  return '0.7';
+}
+
+function changefreqFor(path) {
+  if (path === '/') return 'daily';
+  if (LOW_PRIORITY.has(path)) return 'yearly';
+  return 'weekly';
+}
+
+const sitemapEntries = routes
+  .map(
+    (route) => `  <url>
+    <loc>${SITE_URL}${route.path}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${changefreqFor(route.path)}</changefreq>
+    <priority>${priorityFor(route.path)}</priority>
+  </url>`
+  )
+  .join('\n');
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries}
+</urlset>
+`;
+writeFileSync(resolve(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+writeFileSync(resolve(distDir, 'robots.txt'), robotsTxt, 'utf-8');
+
 console.log(`Prerendered ${count} routes + 404.html`);
+console.log(`Generated sitemap.xml (${routes.length} URLs) and robots.txt for ${SITE_URL}`);

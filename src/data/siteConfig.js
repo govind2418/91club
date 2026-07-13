@@ -1,7 +1,7 @@
-export const SITE_URL = 'https://www.91club.com';
+export const SITE_URL = 'https://91clubapp.com';
 export const SITE_NAME = '91 Club';
 export const TELEGRAM_URL = 'https://t.me/91club_official';
-export const SUPPORT_EMAIL = 'support@91club.com';
+export const SUPPORT_EMAIL = 'support@91clubapp.com';
 
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
