@@ -6,6 +6,8 @@ import ComparisonTable from '../components/ui/ComparisonTable.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import dailyAttendanceBonus from '../assets/screenshots/91club-daily-attendance-bonus.jpg';
 import { GiftIcon, TrophyIcon, ClockIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -72,28 +74,31 @@ export default function Bonus() {
       />
 
       <Section eyebrow="Bonus Types" title="The main categories of 91 Club bonuses">
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <GiftIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <GiftIcon />
+              </div>
+              <h3>Welcome Bonus</h3>
+              <p>A percentage boost applied automatically to your first deposit.</p>
             </div>
-            <h3>Welcome Bonus</h3>
-            <p>A percentage boost applied automatically to your first deposit.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <TrophyIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <TrophyIcon />
+              </div>
+              <h3>VIP-Linked Bonuses</h3>
+              <p>Better bonus offers unlock as your VIP tier increases over time.</p>
             </div>
-            <h3>VIP-Linked Bonuses</h3>
-            <p>Better bonus offers unlock as your VIP tier increases over time.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <ClockIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <ClockIcon />
+              </div>
+              <h3>Seasonal Bonuses</h3>
+              <p>Limited-time offers tied to festivals and platform milestones.</p>
             </div>
-            <h3>Seasonal Bonuses</h3>
-            <p>Limited-time offers tied to festivals and platform milestones.</p>
           </div>
+          <Screenshot src={dailyAttendanceBonus} alt="91club daily attendance bonus screen showing day 1 to day 7 rewards" />
         </div>
       </Section>
 

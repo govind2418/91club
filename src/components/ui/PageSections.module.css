@@ -164,3 +164,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+.mediaSplit {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: center;
+}
+
+.mediaSplit figure {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .mediaSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mediaPair {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.mediaPair figure {
+  margin: 0;
+  flex: 1 1 260px;
+  max-width: 320px;
+}

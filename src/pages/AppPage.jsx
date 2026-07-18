@@ -11,6 +11,8 @@ import ComparisonTable from '../components/ui/ComparisonTable.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import walletBalanceDashboard from '../assets/screenshots/91club-wallet-balance-dashboard.jpg';
 import { BoltIcon, CardIcon, WalletIcon, ChatIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -88,35 +90,38 @@ export default function AppPage() {
       />
 
       <Section eyebrow="Inside the App" title="What you can do without leaving the app">
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <CardIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <CardIcon />
+              </div>
+              <h3>Play Every Game</h3>
+              <p>Colour prediction, lottery, aviator and slots are all accessible from the main dashboard.</p>
             </div>
-            <h3>Play Every Game</h3>
-            <p>Colour prediction, lottery, aviator and slots are all accessible from the main dashboard.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <WalletIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <WalletIcon />
+              </div>
+              <h3>Manage Your Wallet</h3>
+              <p>Deposit, withdraw and review transaction history from a single wallet screen.</p>
             </div>
-            <h3>Manage Your Wallet</h3>
-            <p>Deposit, withdraw and review transaction history from a single wallet screen.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <BoltIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <BoltIcon />
+              </div>
+              <h3>Track VIP Progress</h3>
+              <p>See your current tier, next milestone and unlocked perks at a glance.</p>
             </div>
-            <h3>Track VIP Progress</h3>
-            <p>See your current tier, next milestone and unlocked perks at a glance.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <ChatIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <ChatIcon />
+              </div>
+              <h3>Reach Support Fast</h3>
+              <p>Open a support conversation or jump to our Telegram community directly from the app menu.</p>
             </div>
-            <h3>Reach Support Fast</h3>
-            <p>Open a support conversation or jump to our Telegram community directly from the app menu.</p>
           </div>
+          <Screenshot src={walletBalanceDashboard} alt="91club wallet balance dashboard with deposit and withdraw options" />
         </div>
       </Section>
 

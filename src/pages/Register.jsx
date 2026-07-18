@@ -6,6 +6,8 @@ import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import Testimonials from '../components/ui/Testimonials.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import registrationVerificationSlider from '../assets/screenshots/91club-registration-verification-slider.jpg';
 import { GiftIcon, TrophyIcon, UsersIcon, ShieldIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -95,28 +97,31 @@ export default function Register() {
         eyebrow="What You Get"
         title="Why players sign up for 91 Club"
       >
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <GiftIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <GiftIcon />
+              </div>
+              <h3>Welcome Bonus</h3>
+              <p>New accounts qualify for a first-deposit bonus credited automatically to your balance.</p>
             </div>
-            <h3>Welcome Bonus</h3>
-            <p>New accounts qualify for a first-deposit bonus credited automatically to your balance.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <TrophyIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <TrophyIcon />
+              </div>
+              <h3>VIP Progression</h3>
+              <p>Every account starts climbing the VIP ladder from the first deposit onward.</p>
             </div>
-            <h3>VIP Progression</h3>
-            <p>Every account starts climbing the VIP ladder from the first deposit onward.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <UsersIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <UsersIcon />
+              </div>
+              <h3>Referral Earnings</h3>
+              <p>Your own invite code is generated instantly so you can start earning from referrals.</p>
             </div>
-            <h3>Referral Earnings</h3>
-            <p>Your own invite code is generated instantly so you can start earning from referrals.</p>
           </div>
+          <Screenshot src={registrationVerificationSlider} alt="91club registration verification step for new accounts" />
         </div>
       </Section>
 

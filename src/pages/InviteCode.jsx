@@ -6,6 +6,8 @@ import ComparisonTable from '../components/ui/ComparisonTable.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import inviteFriendsShare from '../assets/screenshots/91club-invite-friends-share.jpg';
 import { UsersIcon, TrophyIcon, WalletIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -90,28 +92,31 @@ export default function InviteCode() {
       </Section>
 
       <Section eyebrow="What You Get" title="Benefits linked to invite codes">
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <UsersIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <UsersIcon />
+              </div>
+              <h3>New Member Bonus</h3>
+              <p>Registering with a valid code can qualify you for an extra welcome credit.</p>
             </div>
-            <h3>New Member Bonus</h3>
-            <p>Registering with a valid code can qualify you for an extra welcome credit.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <TrophyIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <TrophyIcon />
+              </div>
+              <h3>Referrer Rewards</h3>
+              <p>The person who shared their code earns a reward once you make your first deposit.</p>
             </div>
-            <h3>Referrer Rewards</h3>
-            <p>The person who shared their code earns a reward once you make your first deposit.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <WalletIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <WalletIcon />
+              </div>
+              <h3>Ongoing Commission</h3>
+              <p>Some referral tiers continue rewarding activity from your linked account over time.</p>
             </div>
-            <h3>Ongoing Commission</h3>
-            <p>Some referral tiers continue rewarding activity from your linked account over time.</p>
           </div>
+          <Screenshot src={inviteFriendsShare} alt="91club invite friends screen with QR code and share options" />
         </div>
       </Section>
 

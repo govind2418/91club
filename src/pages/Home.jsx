@@ -7,6 +7,18 @@ import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import HeroIllustration from '../components/illustrations/HeroIllustration.jsx';
 import Particles from '../components/layout/Particles.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import gameLobbyHome from '../assets/screenshots/91club-game-lobby-home-screen.jpg';
+import loginScreen from '../assets/screenshots/91club-login-screen.jpg';
+import registerScreen from '../assets/screenshots/91club-register-screen.jpg';
+import accountDashboard from '../assets/screenshots/91club-account-dashboard-features.jpg';
+import walletOverview from '../assets/screenshots/91club-wallet-overview-screen.jpg';
+import bonusCollection from '../assets/screenshots/91club-bonus-collection-rewards.jpg';
+import lotteryGamesLobby from '../assets/screenshots/91club-lottery-games-lobby.jpg';
+import gameLibraryProviders from '../assets/screenshots/91club-game-library-providers.jpg';
+import wheelSpinPrize from '../assets/screenshots/91club-wheel-spin-prize-wheel.jpg';
+import wheelOfFortune from '../assets/screenshots/91club-wheel-of-fortune-spin.jpg';
+import supportCenterHelp from '../assets/screenshots/91club-support-center-help.jpg';
 import {
   BoltIcon,
   ShieldIcon,
@@ -128,6 +140,10 @@ export default function Home() {
       </section>
 
       <Section eyebrow="About The Platform" title="What Is 91 Club?">
+        <Screenshot
+          src={gameLobbyHome}
+          alt="91club game lobby home screen showing the anniversary banner, wheel of fortune, VIP privileges and recommended games"
+        />
         <div className={shared.twoCol}>
           <div className={shared.prose}>
             <p>
@@ -172,33 +188,38 @@ export default function Home() {
         title="91 Club Login"
         subtitle="Every game, deposit and reward on 91 Club sits behind one account. Signing in only takes a registered mobile number and a password."
       >
-        <div className={styles.cardsGrid}>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <ShieldIcon />
+        <div className={shared.mediaSplit}>
+          <div>
+            <div className={styles.cardsGrid}>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <ShieldIcon />
+                </div>
+                <h3>Secure Sign-In</h3>
+                <p>Sessions are protected with device verification, so logging in from a new phone triggers an extra confirmation step.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <BoltIcon />
+                </div>
+                <h3>Works On Any Device</h3>
+                <p>Log in from a mobile browser, desktop browser or the installed app using the same credentials.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <ChatIcon />
+                </div>
+                <h3>Help If You Get Locked Out</h3>
+                <p>Password resets and account recovery steps are covered in detail on the login guide.</p>
+              </div>
             </div>
-            <h3>Secure Sign-In</h3>
-            <p>Sessions are protected with device verification, so logging in from a new phone triggers an extra confirmation step.</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <BoltIcon />
+            <div style={{ marginTop: 28 }}>
+              <Link to="/91-club-login">
+                <Button variant="outline">Read the Full 91 Club Login Guide</Button>
+              </Link>
             </div>
-            <h3>Works On Any Device</h3>
-            <p>Log in from a mobile browser, desktop browser or the installed app using the same credentials.</p>
           </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <ChatIcon />
-            </div>
-            <h3>Help If You Get Locked Out</h3>
-            <p>Password resets and account recovery steps are covered in detail on the login guide.</p>
-          </div>
-        </div>
-        <div style={{ marginTop: 28 }}>
-          <Link to="/91-club-login">
-            <Button variant="outline">Read the Full 91 Club Login Guide</Button>
-          </Link>
+          <Screenshot src={loginScreen} alt="91club login screen with phone number and password fields" />
         </div>
       </Section>
 
@@ -207,33 +228,38 @@ export default function Home() {
         title="91 Club Register"
         subtitle="Registration is free and takes under a minute. You only need an active mobile number to get started."
       >
-        <div className={styles.cardsGrid}>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <GiftIcon />
+        <div className={shared.mediaSplit}>
+          <div>
+            <div className={styles.cardsGrid}>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <GiftIcon />
+                </div>
+                <h3>Welcome Bonus</h3>
+                <p>New accounts qualify for a first-deposit bonus credited automatically after registration.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <TrophyIcon />
+                </div>
+                <h3>VIP From Day One</h3>
+                <p>Every account starts climbing the VIP reward ladder from the first deposit onward.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <UsersIcon />
+                </div>
+                <h3>Optional Invite Code</h3>
+                <p>Add a friend&apos;s invite code at sign-up to unlock linked bonuses for both of you.</p>
+              </div>
             </div>
-            <h3>Welcome Bonus</h3>
-            <p>New accounts qualify for a first-deposit bonus credited automatically after registration.</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <TrophyIcon />
+            <div style={{ marginTop: 28 }}>
+              <Link to="/91-club-register">
+                <Button variant="outline">See the Full Registration Walkthrough</Button>
+              </Link>
             </div>
-            <h3>VIP From Day One</h3>
-            <p>Every account starts climbing the VIP reward ladder from the first deposit onward.</p>
           </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <UsersIcon />
-            </div>
-            <h3>Optional Invite Code</h3>
-            <p>Add a friend&apos;s invite code at sign-up to unlock linked bonuses for both of you.</p>
-          </div>
-        </div>
-        <div style={{ marginTop: 28 }}>
-          <Link to="/91-club-register">
-            <Button variant="outline">See the Full Registration Walkthrough</Button>
-          </Link>
+          <Screenshot src={registerScreen} alt="91club register screen for creating a new account with an optional invite code" />
         </div>
       </Section>
 
@@ -242,33 +268,41 @@ export default function Home() {
         title="91 Club App"
         subtitle="The 91 Club app brings games, your wallet, rewards and support into one home-screen shortcut."
       >
-        <div className={styles.cardsGrid}>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <CardIcon />
+        <div className={shared.mediaSplit}>
+          <div>
+            <div className={styles.cardsGrid}>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <CardIcon />
+                </div>
+                <h3>Every Game In One Place</h3>
+                <p>Colour prediction, lottery, aviator and slots are all reachable from the same dashboard.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <WalletIcon />
+                </div>
+                <h3>Manage Your Wallet</h3>
+                <p>Deposit, withdraw and check transaction history without leaving the app.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <BoltIcon />
+                </div>
+                <h3>Same Account, Faster Access</h3>
+                <p>Your login and balance stay identical to the website, just one tap away.</p>
+              </div>
             </div>
-            <h3>Every Game In One Place</h3>
-            <p>Colour prediction, lottery, aviator and slots are all reachable from the same dashboard.</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <WalletIcon />
+            <div style={{ marginTop: 28 }}>
+              <Link to="/91-club-app">
+                <Button variant="outline">Explore Everything Inside the App</Button>
+              </Link>
             </div>
-            <h3>Manage Your Wallet</h3>
-            <p>Deposit, withdraw and check transaction history without leaving the app.</p>
           </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <BoltIcon />
-            </div>
-            <h3>Same Account, Faster Access</h3>
-            <p>Your login and balance stay identical to the website, just one tap away.</p>
-          </div>
-        </div>
-        <div style={{ marginTop: 28 }}>
-          <Link to="/91-club-app">
-            <Button variant="outline">Explore Everything Inside the App</Button>
-          </Link>
+          <Screenshot
+            src={accountDashboard}
+            alt="91club account dashboard showing wallet, deposit, withdraw and VIP features inside the app"
+          />
         </div>
       </Section>
 
@@ -277,33 +311,38 @@ export default function Home() {
         title="91 Club Download"
         subtitle="Downloading is optional. 91 Club runs fully in a mobile browser, but installing it adds a quicker, app-like shortcut."
       >
-        <div className={styles.cardsGrid}>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <BoltIcon />
+        <div className={shared.mediaSplit}>
+          <div>
+            <div className={styles.cardsGrid}>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <BoltIcon />
+                </div>
+                <h3>Quicker Launch</h3>
+                <p>Open 91 Club straight from your home screen without typing a web address.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <ShieldIcon />
+                </div>
+                <h3>Same Security</h3>
+                <p>Every protection that covers your browser session carries over to the installed app.</p>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <ClockIcon />
+                </div>
+                <h3>Under Two Minutes</h3>
+                <p>The install file is lightweight, so setup rarely takes more than a couple of minutes.</p>
+              </div>
             </div>
-            <h3>Quicker Launch</h3>
-            <p>Open 91 Club straight from your home screen without typing a web address.</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <ShieldIcon />
+            <div style={{ marginTop: 28 }}>
+              <Link to="/91-club-download">
+                <Button variant="outline">Get the Step-by-Step Download Guide</Button>
+              </Link>
             </div>
-            <h3>Same Security</h3>
-            <p>Every protection that covers your browser session carries over to the installed app.</p>
           </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <ClockIcon />
-            </div>
-            <h3>Under Two Minutes</h3>
-            <p>The install file is lightweight, so setup rarely takes more than a couple of minutes.</p>
-          </div>
-        </div>
-        <div style={{ marginTop: 28 }}>
-          <Link to="/91-club-download">
-            <Button variant="outline">Get the Step-by-Step Download Guide</Button>
-          </Link>
+          <Screenshot src={walletOverview} alt="91club wallet overview screen showing the main wallet balance after installing the app" />
         </div>
       </Section>
 
@@ -313,45 +352,48 @@ export default function Home() {
         subtitle="These apply the same way whether you play through the website or the app."
         id="features"
       >
-        <div className={styles.cardsGrid}>
-          {[
-            {
-              icon: <BoltIcon />,
-              title: 'Lightning Fast Rounds',
-              text: 'Short, round-based gameplay means you are never waiting long between results.'
-            },
-            {
-              icon: <ShieldIcon />,
-              title: 'Secured Accounts',
-              text: 'Session encryption and verification steps protect your balance and personal details.'
-            },
-            {
-              icon: <WalletIcon />,
-              title: 'Smooth Payments',
-              text: 'Multiple deposit options and a streamlined withdrawal review process.'
-            },
-            {
-              icon: <TrophyIcon />,
-              title: 'VIP Reward Tiers',
-              text: 'Climb through membership levels to unlock better bonuses and perks over time.'
-            },
-            {
-              icon: <ChatIcon />,
-              title: 'Responsive Support',
-              text: 'A dedicated support desk and Telegram community for quick answers.'
-            },
-            {
-              icon: <ClockIcon />,
-              title: 'Always Available',
-              text: 'Play whenever you like, from your phone or desktop browser, no downtime.'
-            }
-          ].map((item) => (
-            <div className={styles.card} key={item.title}>
-              <div className={styles.cardIcon}>{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
+        <div className={shared.mediaSplit}>
+          <div className={styles.cardsGrid}>
+            {[
+              {
+                icon: <BoltIcon />,
+                title: 'Lightning Fast Rounds',
+                text: 'Short, round-based gameplay means you are never waiting long between results.'
+              },
+              {
+                icon: <ShieldIcon />,
+                title: 'Secured Accounts',
+                text: 'Session encryption and verification steps protect your balance and personal details.'
+              },
+              {
+                icon: <WalletIcon />,
+                title: 'Smooth Payments',
+                text: 'Multiple deposit options and a streamlined withdrawal review process.'
+              },
+              {
+                icon: <TrophyIcon />,
+                title: 'VIP Reward Tiers',
+                text: 'Climb through membership levels to unlock better bonuses and perks over time.'
+              },
+              {
+                icon: <ChatIcon />,
+                title: 'Responsive Support',
+                text: 'A dedicated support desk and Telegram community for quick answers.'
+              },
+              {
+                icon: <ClockIcon />,
+                title: 'Always Available',
+                text: 'Play whenever you like, from your phone or desktop browser, no downtime.'
+              }
+            ].map((item) => (
+              <div className={styles.card} key={item.title}>
+                <div className={styles.cardIcon}>{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <Screenshot src={bonusCollection} alt="91club bonus collection screen listing attendance and deposit rewards" />
         </div>
       </Section>
 
@@ -360,6 +402,10 @@ export default function Home() {
         title="91 Club Games"
         subtitle="Four core categories, one shared account balance. Visit the full directory for details on every format."
       >
+        <div className={shared.mediaPair}>
+          <Screenshot src={lotteryGamesLobby} alt="91club lottery games lobby featuring Win Go, K3, 5D and TRX Wingo" />
+          <Screenshot src={gameLibraryProviders} alt="91club game library showing casino and fishing game providers" />
+        </div>
         <div className={styles.cardsGrid}>
           <div className={styles.categoryCard}>
             <span className={styles.categoryTag}>Most Played</span>
@@ -446,6 +492,10 @@ export default function Home() {
         title="Fresh bonuses added regularly"
         subtitle="Promotions rotate through the season, so check back often or follow our Telegram channel for instant alerts."
       >
+        <div className={shared.mediaPair}>
+          <Screenshot src={wheelSpinPrize} alt="91club wheel spin promotion screen with a prize wheel" />
+          <Screenshot src={wheelOfFortune} alt="91club wheel of fortune spin screen with cash prizes" />
+        </div>
         <div className={styles.promoGrid}>
           <div className={styles.promoCard}>
             <div className={styles.promoBanner}>
@@ -562,6 +612,7 @@ export default function Home() {
       </Section>
 
       <Section eyebrow="FAQ" title="Frequently asked questions">
+        <Screenshot src={supportCenterHelp} alt="91club self service support center screen" />
         <FAQAccordion faqs={faqs} />
       </Section>
 

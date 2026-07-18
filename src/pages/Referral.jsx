@@ -6,6 +6,9 @@ import ComparisonTable from '../components/ui/ComparisonTable.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import referralAgencyDashboard from '../assets/screenshots/91club-referral-agency-dashboard.jpg';
+import invitationBonusRewards from '../assets/screenshots/91club-invitation-bonus-rewards.jpg';
 import { UsersIcon, WalletIcon, TrophyIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -87,28 +90,31 @@ export default function Referral() {
       </Section>
 
       <Section eyebrow="Why Refer Friends" title="What the referral program offers">
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <UsersIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <UsersIcon />
+              </div>
+              <h3>No Referral Limit</h3>
+              <p>Invite as many friends as you like with the same personal code.</p>
             </div>
-            <h3>No Referral Limit</h3>
-            <p>Invite as many friends as you like with the same personal code.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <WalletIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <WalletIcon />
+              </div>
+              <h3>Ongoing Commission</h3>
+              <p>Earnings continue as long as your referred players remain active.</p>
             </div>
-            <h3>Ongoing Commission</h3>
-            <p>Earnings continue as long as your referred players remain active.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <TrophyIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <TrophyIcon />
+              </div>
+              <h3>Stacks With VIP</h3>
+              <p>Referral activity also contributes toward your own VIP tier progress.</p>
             </div>
-            <h3>Stacks With VIP</h3>
-            <p>Referral activity also contributes toward your own VIP tier progress.</p>
           </div>
+          <Screenshot src={referralAgencyDashboard} alt="91club referral agency dashboard showing subordinate and commission data" />
         </div>
       </Section>
 
@@ -125,6 +131,7 @@ export default function Referral() {
       </Section>
 
       <Section eyebrow="Getting Started" title="Sharing your code effectively">
+        <Screenshot src={invitationBonusRewards} alt="91club invitation bonus screen showing referral reward tiers" />
         <div className={shared.prose}>
           <p>
             The most effective referrals come from people who are genuinely interested in

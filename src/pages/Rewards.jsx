@@ -7,6 +7,8 @@ import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import StatCounter from '../components/ui/StatCounter.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import rewardsActivityCenter from '../assets/screenshots/91club-rewards-activity-center.jpg';
 import { TrophyIcon, GiftIcon, UsersIcon, WalletIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -82,35 +84,38 @@ export default function Rewards() {
       </Section>
 
       <Section eyebrow="Reward Types" title="The four core reward categories">
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <GiftIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <GiftIcon />
+              </div>
+              <h3>Welcome Bonus</h3>
+              <p>A first-deposit boost credited automatically to every new account.</p>
             </div>
-            <h3>Welcome Bonus</h3>
-            <p>A first-deposit boost credited automatically to every new account.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <TrophyIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <TrophyIcon />
+              </div>
+              <h3>VIP Tier Perks</h3>
+              <p>Ongoing benefits that grow as you move up through membership levels.</p>
             </div>
-            <h3>VIP Tier Perks</h3>
-            <p>Ongoing benefits that grow as you move up through membership levels.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <UsersIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <UsersIcon />
+              </div>
+              <h3>Referral Commission</h3>
+              <p>Earn a share whenever someone you invite becomes an active player.</p>
             </div>
-            <h3>Referral Commission</h3>
-            <p>Earn a share whenever someone you invite becomes an active player.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <WalletIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <WalletIcon />
+              </div>
+              <h3>Gift Code Drops</h3>
+              <p>Periodic free-balance codes released through our Telegram channel.</p>
             </div>
-            <h3>Gift Code Drops</h3>
-            <p>Periodic free-balance codes released through our Telegram channel.</p>
           </div>
+          <Screenshot src={rewardsActivityCenter} alt="91club rewards activity center with gifts and attendance bonus" />
         </div>
       </Section>
 

@@ -6,6 +6,8 @@ import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import ComparisonTable from '../components/ui/ComparisonTable.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import withdrawPaymentOptions from '../assets/screenshots/91club-withdraw-payment-options.jpg';
 import { ShieldIcon, WalletIcon, ChatIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -70,28 +72,31 @@ export default function Security() {
       />
 
       <Section eyebrow="Platform-Side Protection" title="What we do to protect every account">
-        <div className={shared.grid3}>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <ShieldIcon />
+        <div className={shared.mediaSplit}>
+          <div className={shared.grid3}>
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <ShieldIcon />
+              </div>
+              <h3>Encrypted Sessions</h3>
+              <p>All login sessions and transactions run over encrypted connections.</p>
             </div>
-            <h3>Encrypted Sessions</h3>
-            <p>All login sessions and transactions run over encrypted connections.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <WalletIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <WalletIcon />
+              </div>
+              <h3>Withdrawal Verification</h3>
+              <p>Every withdrawal request passes a verification step before funds are released.</p>
             </div>
-            <h3>Withdrawal Verification</h3>
-            <p>Every withdrawal request passes a verification step before funds are released.</p>
-          </div>
-          <div className={shared.card}>
-            <div className={shared.cardIcon}>
-              <ChatIcon />
+            <div className={shared.card}>
+              <div className={shared.cardIcon}>
+                <ChatIcon />
+              </div>
+              <h3>Activity Monitoring</h3>
+              <p>Unusual login patterns or account behavior are flagged for manual review.</p>
             </div>
-            <h3>Activity Monitoring</h3>
-            <p>Unusual login patterns or account behavior are flagged for manual review.</p>
           </div>
+          <Screenshot src={withdrawPaymentOptions} alt="91club withdraw screen showing bank card, UPI and USDT options" />
         </div>
       </Section>
 
