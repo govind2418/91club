@@ -150,7 +150,7 @@ export default function Slots() {
             { label: '91 Club Games', href: '/91-club-games' },
             { label: '91 Club Aviator', href: '/91-club-aviator' },
             { label: '91 Club Colour Prediction', href: '/91-club-colour-prediction' },
-            { label: '91 Club Tips', href: '/91-club-tips' },
+            { label: '91 Club Lottery', href: '/91-club-lottery' },
             { label: '91 Club Bonus', href: '/91-club-bonus' },
             { label: 'Home', href: '/' }
           ]}

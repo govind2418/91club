@@ -187,10 +187,10 @@ export default function Login() {
         <RelatedLinks
           links={[
             { label: '91 Club Register', href: '/91-club-register' },
+            { label: '91 Club App', href: '/91-club-app' },
             { label: '91 Club Download', href: '/91-club-download' },
             { label: '91 Club Security', href: '/91-club-security' },
             { label: '91 Club Support', href: '/91-club-support' },
-            { label: '91 Club FAQ', href: '/91-club-faq' },
             { label: 'Home', href: '/' }
           ]}
         />

@@ -177,11 +177,11 @@ export default function Download() {
       <Section>
         <RelatedLinks
           links={[
-            { label: '91 Club APK', href: '/91-club-apk' },
             { label: '91 Club App', href: '/91-club-app' },
-            { label: '91 Club Register', href: '/91-club-register' },
             { label: '91 Club Login', href: '/91-club-login' },
-            { label: '91 Club Security', href: '/91-club-security' },
+            { label: '91 Club Support', href: '/91-club-support' },
+            { label: '91 Club APK', href: '/91-club-apk' },
+            { label: '91 Club Register', href: '/91-club-register' },
             { label: 'Home', href: '/' }
           ]}
         />
