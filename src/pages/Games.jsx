@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildCollectionPageSchema
+} from '../components/seo/SEO.jsx';
 import PageHero from '../components/ui/PageHero.jsx';
 import Section from '../components/ui/Section.jsx';
 import ComparisonTable from '../components/ui/ComparisonTable.jsx';
@@ -77,10 +81,11 @@ export default function Games() {
         schemas={[
           ORGANIZATION_SCHEMA,
           WEBSITE_SCHEMA,
-          buildWebPageSchema({
-            title: '91 Club Games (91club Games) - Explore the Full Game Directory',
+          buildCollectionPageSchema({
+            name: '91 Club Games (91club Games) - Explore the Full Game Directory',
             description: 'A directory of every game category available on 91 Club, also searched as 91club games.',
-            path: '/91-club-games'
+            path: '/91-club-games',
+            items: categories.map((c) => ({ name: c.title, href: c.href }))
           }),
           buildBreadcrumbSchema(breadcrumbItems),
           buildFaqSchema(faqs)

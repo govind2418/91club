@@ -43,6 +43,24 @@
   color: var(--color-accent);
 }
 
+.hubList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.hubList a {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.hubList a:hover {
+  color: var(--color-accent);
+}
+
 .telegram {
   display: inline-block;
   margin-top: 18px;

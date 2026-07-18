@@ -23,9 +23,20 @@ export default function Footer() {
               </span>
             </Link>
             <p>
-              91 Club is a premium online gaming platform offering colour prediction, lottery,
-              aviator and slot-style entertainment with fast withdrawals and 24/7 support.
+              91 Club works as a single connected system rather than a set of separate pages —
+              the account you create carries the same balance and history whether you are signing
+              in, redeeming a gift code, or checking VIP progress. This footer collects the parts
+              of that system most people come back to:
             </p>
+            <ul className={styles.hubList}>
+              <li><Link to="/91-club-login">91 Club Login</Link></li>
+              <li><Link to="/91-club-register">91 Club Register</Link></li>
+              <li><Link to="/91-club-app">91 Club App</Link></li>
+              <li><Link to="/91-club-download">91 Club Download</Link></li>
+              <li><Link to="/91-club-games">91 Club Games</Link></li>
+              <li><Link to="/91-club-support">91 Club Support</Link></li>
+              <li><Link to="/91-club-rewards">91 Club Rewards</Link></li>
+            </ul>
             <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className={styles.telegram}>
               Join our Telegram Channel →
             </a>

@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import SEO, { buildFaqSchema, buildWebPageSchema } from '../components/seo/SEO.jsx';
+import SEO, {
+  buildFaqSchema,
+  buildWebPageSchema,
+  buildBreadcrumbSchema,
+  buildItemListSchema
+} from '../components/seo/SEO.jsx';
 import Button from '../components/ui/Button.jsx';
 import Section from '../components/ui/Section.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
@@ -72,6 +77,24 @@ const faqs = [
   }
 ];
 
+const breadcrumbItems = [{ label: 'Home', href: '/' }];
+
+const gameCategories = [
+  { name: 'Colour Prediction', href: '/91-club-colour-prediction' },
+  { name: 'Lottery', href: '/91-club-lottery' },
+  { name: 'Aviator', href: '/91-club-aviator' },
+  { name: 'Slots', href: '/91-club-slots' }
+];
+
+const relatedSearches = [
+  { label: '91club', href: '/' },
+  { label: '91 Club Login', href: '/91-club-login' },
+  { label: '91 Club App', href: '/91-club-app' },
+  { label: '91 Club APK', href: '/91-club-apk' },
+  { label: '91 Club Download', href: '/91-club-download' },
+  { label: '91 Club Register', href: '/91-club-register' }
+];
+
 export default function Home() {
   return (
     <>
@@ -86,8 +109,11 @@ export default function Home() {
             title: '91 Club (91club) - Login, Register, App & Download',
             description:
               '91 Club, also searched as 91club, is an online gaming platform offering a single account for login, registration, the official app and every game category.',
-            path: '/'
+            path: '/',
+            image: '/og-image.png'
           }),
+          buildBreadcrumbSchema(breadcrumbItems),
+          buildItemListSchema({ name: '91 Club Games', items: gameCategories }),
           buildFaqSchema(faqs)
         ]}
       />
@@ -147,17 +173,96 @@ export default function Home() {
         <div className={shared.twoCol}>
           <div className={shared.prose}>
             <p>
-              91 Club is an online platform built around a single account system. You register
-              once, then use that same login to play, deposit, withdraw, track rewards and reach
-              support, whether you are on the website or the official app. Nothing about your
-              account changes depending on which one you use.
+              Type &quot;91 Club&quot; into a search bar and you will find a mix of login pages, download
+              links and forum threads, which is exactly why a single reference page is useful.
+              What follows is a plain description of what the platform actually is, how its parts
+              connect to each other, and where to go next if you already know what you are
+              looking for.
             </p>
+
+            <h3>A single account behind everything</h3>
             <p>
-              Because the name is often typed as &quot;91club&quot; without a space, both spellings lead
-              to the exact same login, the same registration form and the same games. This
-              homepage works as the main entry point for the platform: use the sections below to
-              jump straight to login, registration, the app, the download page or the full game
-              directory.
+              At its core, 91 Club is a round-based gaming platform: short, repeatable rounds
+              across a handful of formats, all sitting behind one login. That single-account
+              design is deliberate. Instead of separate profiles for each game type, a player{' '}
+              <Link to="/91-club-register">registers once</Link> and that same credential set —
+              mobile number and password — carries across colour prediction, lottery draws, the
+              aviator-style crash format and the slot library. Balance, history and rewards move
+              with the account rather than being split across different game lobbies.
+            </p>
+
+            <h3>Why &quot;91club&quot; shows up in search bars</h3>
+            <p>
+              Search habits and mobile keyboards both explain the second spelling. Autocomplete
+              defaults to no-space suggestions, and plenty of players simply type the name the
+              way it sounds rather than the way it is styled. &quot;91club&quot; and &quot;91 Club&quot; are not two
+              competing products or two different sign-in systems; they resolve to the same
+              platform, the same account database and the same support channel. Treat the two
+              spellings as interchangeable rather than as separate brands.
+            </p>
+
+            <h3>Logging in and setting up an account</h3>
+            <p>
+              <Link to="/91-club-register">Registration</Link> asks for very little: an active
+              mobile number, a password, and confirmation of a one-time code. There is no
+              document upload at the sign-up stage, which keeps the process under a minute for
+              most people. Once an account exists,{' '}
+              <Link to="/91-club-login">logging back in</Link> uses the same two fields, with an
+              added device-verification prompt if the sign-in attempt comes from a phone or
+              browser the system has not seen before. That extra prompt is a security measure, not
+              a bug — it is the main thing standing between a stolen password and an actual
+              account takeover.
+            </p>
+
+            <h3>Getting the app onto a phone</h3>
+            <p>
+              91 Club is fully usable through a mobile browser, so installing anything is
+              optional rather than required. What the{' '}
+              <Link to="/91-club-app">official app</Link> adds is convenience: a home-screen
+              icon, slightly faster navigation between screens, and — on Android — an installable
+              file rather than a browser tab that has to be found again each session. iPhone
+              users get the same functionality by adding the site to their home screen, since
+              there is not a separate iOS build. Either route, including the full{' '}
+              <Link to="/91-club-download">download</Link> steps, lands on the identical account
+              and balance.
+            </p>
+
+            <h3>Games, wallet and where rewards fit in</h3>
+            <p>
+              The game library is organised into a small number of formats rather than an
+              overwhelming catalogue: colour prediction rounds that settle in under a minute,
+              scheduled lottery draws, a rising-multiplier crash game, and a themed slot section —
+              all covered in more depth on the <Link to="/91-club-games">games directory</Link>.
+              Every format draws from the same wallet, so a deposit made for one is available to
+              all the others immediately. Rewards layer on top of that wallet rather than existing
+              separately: a first-deposit bonus for new accounts, ongoing{' '}
+              <Link to="/91-club-vip">VIP perks</Link> tied to activity level, and periodic{' '}
+              <Link to="/91-club-gift-code">gift codes</Link> distributed through the platform&apos;s
+              Telegram channel.
+            </p>
+
+            <h3>Support and the security layer underneath it</h3>
+            <p>
+              Every login session and transaction runs over an encrypted connection, and
+              withdrawal requests pass through a verification step before funds move — standard
+              practice for any platform handling real balances, and explained in full on the{' '}
+              <Link to="/91-club-security">security page</Link>. Support is reachable through an
+              in-account channel and a Telegram community, and both exist mainly to handle the two
+              things that come up most often: a forgotten password and a delayed withdrawal.
+              Neither requires escalation beyond that first contact on the{' '}
+              <Link to="/91-club-support">support page</Link> in most cases.
+            </p>
+
+            <h3>One ecosystem, two entry points</h3>
+            <p>
+              Website and app are best thought of as two doors into the same room rather than two
+              different products. Switching between a desktop browser session and the installed
+              app mid-session does not split the account or reset progress — VIP tier, wallet
+              balance and game history are shared in real time. That is the practical reason this
+              page treats login, registration, the app and the download as parts of one connected
+              system instead of four separate topics: they all point back to the same underlying
+              account. The sections below cover each of those topics in turn, followed by a closer
+              look at platform features, the game directory, rewards and security.
             </p>
           </div>
           <div className={shared.infoBox}>
@@ -186,8 +291,32 @@ export default function Home() {
       <Section
         eyebrow="Account Access"
         title="91 Club Login"
-        subtitle="Every game, deposit and reward on 91 Club sits behind one account. Signing in only takes a registered mobile number and a password."
+        subtitle="Signing in is the one action every other part of the platform depends on — no separate logins for games, wallet or rewards, just a single set of credentials."
       >
+        <div className={shared.prose} style={{ marginBottom: 28 }}>
+          <p>
+            Most sign-in problems trace back to one of three things: a mistyped password, a
+            verification code that arrived late, or a session that expired after a period of
+            inactivity. None of them require starting over. A password reset takes about as long
+            as the original <Link to="/91-club-register">registration</Link> did, delayed codes
+            usually arrive within a minute if you wait rather than request a second one
+            immediately, and an expired session just needs a fresh sign-in rather than any kind of
+            account recovery. If you have not created an account yet, that process is covered on
+            the register page; once you are in, the{' '}
+            <Link to="/91-club-security">security page</Link> explains how sessions and device
+            verification work in more detail.
+          </p>
+          <p>
+            Because a 91 Club account is tied to a single mobile number, losing access to that
+            number is the one scenario worth planning for in advance. Keeping the registered
+            number current, and knowing that <Link to="/91-club-support">support</Link> can verify
+            identity through account history rather than the phone alone, removes most of the
+            anxiety around this. It is also why the platform asks you to confirm device
+            recognition on unfamiliar hardware rather than skipping straight to a balance screen —
+            that one extra step is what keeps a compromised password from turning into a
+            compromised wallet.
+          </p>
+        </div>
         <div className={shared.mediaSplit}>
           <div>
             <div className={styles.cardsGrid}>
@@ -228,6 +357,29 @@ export default function Home() {
         title="91 Club Register"
         subtitle="Registration is free and takes under a minute. You only need an active mobile number to get started."
       >
+        <div className={shared.prose} style={{ marginBottom: 28 }}>
+          <p>
+            The only two fields that matter at sign-up are a working mobile number and a password
+            you have not reused elsewhere — everything else, including profile details and
+            payment preferences, can be filled in later from account settings. An invite code is
+            optional rather than required; entering one links your account to whoever shared it
+            and can unlock a linked bonus for both sides, but skipping that field does not affect
+            your ability to register or play. If a friend already sent you a code, the{' '}
+            <Link to="/91-club-invite-code">invite code page</Link> explains exactly where it
+            goes and what changes once it is applied.
+          </p>
+          <p>
+            Age and identity checks are handled lightly at this stage — you confirm you are 18 or
+            older, and no documents are requested unless a later withdrawal is large enough to
+            trigger a routine review. That is a deliberate trade-off: keeping the sign-up form
+            short means more people finish it, while pushing verification to the withdrawal stage
+            means it only affects the minority of accounts moving larger amounts. How withdrawals
+            and verification work together is covered on the{' '}
+            <Link to="/91-club-security">security page</Link>, and once your account exists, the{' '}
+            <Link to="/91-club-login">login page</Link> has the exact steps for getting back in on
+            any later visit.
+          </p>
+        </div>
         <div className={shared.mediaSplit}>
           <div>
             <div className={styles.cardsGrid}>
@@ -268,6 +420,35 @@ export default function Home() {
         title="91 Club App"
         subtitle="The 91 Club app brings games, your wallet, rewards and support into one home-screen shortcut."
       >
+        <div className={shared.prose} style={{ marginBottom: 28 }}>
+          <p>
+            Nothing inside the app is exclusive to it — every game, every wallet function and
+            every support channel is equally reachable through a mobile browser. What changes is
+            friction: opening an installed app is one tap from the home screen, while a browser
+            session usually means finding a bookmark or retyping an address first. For anyone who
+            checks in on a prediction round or a lottery draw more than once a day, that
+            difference adds up over a week even though it does not change what you can actually
+            do.
+          </p>
+          <p>
+            Notifications are the other practical reason players install it. The app can alert
+            you to a credited bonus, a resolved withdrawal, or a promotion window without you
+            needing to check manually, whereas the browser version has no real equivalent since
+            push permissions behave inconsistently across mobile browsers. None of this is
+            required, though — if you would rather not install anything, the{' '}
+            <Link to="/91-club-download">download page</Link> explains the browser-only route in
+            more detail, and the <Link to="/91-club-games">games directory</Link> works
+            identically either way.
+          </p>
+          <p>
+            Storage footprint is small enough that it rarely decides anything either way — the
+            installed app takes up a few megabytes, comparable to a handful of photos, and updates
+            happen quietly in the background rather than through manual app-store downloads. If
+            you are switching between a shared family phone and your own device, the app and the
+            website draw from the same account and balance, so there is no risk of fragmenting
+            your history by using both.
+          </p>
+        </div>
         <div className={shared.mediaSplit}>
           <div>
             <div className={styles.cardsGrid}>
@@ -311,6 +492,34 @@ export default function Home() {
         title="91 Club Download"
         subtitle="Downloading is optional. 91 Club runs fully in a mobile browser, but installing it adds a quicker, app-like shortcut."
       >
+        <div className={shared.prose} style={{ marginBottom: 28 }}>
+          <p>
+            The installation file itself is small, and the process rarely takes more than a
+            couple of minutes on a normal connection. Android handles it through a standard
+            one-time permission to install from outside the Play Store, which is routine for many
+            apps distributed directly rather than through an official store listing — it is not
+            specific to 91 Club and does not indicate anything unusual about the file. iPhone
+            does not need this step at all, since the equivalent there is adding the site to the
+            home screen rather than installing a separate package, covered in more detail on the{' '}
+            <Link to="/91-club-app">app page</Link>.
+          </p>
+          <p>
+            The one habit worth building is checking the address bar before starting any
+            download. Because 91 Club deals with real account balances, it is the kind of
+            platform that attracts imitation pages offering a faster or &quot;exclusive&quot; download
+            link, usually through messaging apps or ads rather than search results. The safest
+            pattern is boring but reliable: reach this page directly, confirm the domain matches,
+            and treat any download link received through chat as something to verify with{' '}
+            <Link to="/91-club-support">support</Link> rather than click immediately.
+          </p>
+          <p>
+            None of this changes what is on the other side of the install.{' '}
+            <Link to="/91-club-login">Logging in</Link> afterward uses the same credentials as
+            the browser version, and anything covered on the app page — wallet access, game
+            selection, notification settings — is identical whether you got there through a fresh
+            install or a bookmark you have had for months.
+          </p>
+        </div>
         <div className={shared.mediaSplit}>
           <div>
             <div className={styles.cardsGrid}>
@@ -352,6 +561,20 @@ export default function Home() {
         subtitle="These apply the same way whether you play through the website or the app."
         id="features"
       >
+        <div className={shared.prose} style={{ marginBottom: 28 }}>
+          <p>
+            None of the six items below are exclusive to a particular game or a particular VIP
+            tier — they are baseline behaviour for every account from the moment it is created.
+            Session encryption and withdrawal verification are covered in more depth on the{' '}
+            <Link to="/91-club-security">security page</Link>, and the{' '}
+            <Link to="/91-club-vip">VIP page</Link> breaks down exactly how the reward tiers
+            mentioned here scale as an account stays active over time. What is worth noting is how
+            these pieces interact rather than function in isolation: fast rounds only feel fast if
+            payments keep pace, and payments only feel trustworthy if the account behind them is
+            genuinely hard to break into. The list below is really describing one connected
+            experience rather than six separate selling points.
+          </p>
+        </div>
         <div className={shared.mediaSplit}>
           <div className={styles.cardsGrid}>
             {[
@@ -448,9 +671,85 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div style={{ marginTop: 28 }}>
+        <div className={shared.prose} style={{ marginTop: 28 }}>
+          <p>
+            Picking a starting format usually comes down to pace rather than any real difference
+            in how fair or safe each one is — colour prediction and aviator both reward quick,
+            repeated decisions, lottery suits a slower pick-and-wait rhythm, and slots sit
+            somewhere in between as a lower-pressure option. Whichever format you settle into, the
+            bonuses covered on the <Link to="/91-club-bonus">bonus page</Link> and the periodic
+            codes on the <Link to="/91-club-gift-code">gift code page</Link> apply across all four
+            rather than being tied to one game type, and consistent play in any of them counts
+            toward the progress described on the <Link to="/91-club-vip">VIP page</Link>.
+          </p>
+        </div>
+        <div style={{ marginTop: 20 }}>
           <Link to="/91-club-games">
             <Button variant="outline">Browse the Full 91 Club Games Directory</Button>
+          </Link>
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="91 Club Rewards"
+        title="How rewards accumulate across the platform"
+        subtitle="Bonuses, VIP status and gift codes are three different mechanics that all feed the same wallet."
+      >
+        <div className={shared.prose}>
+          <p>
+            Three separate systems feed into the same balance, and it is easy to conflate them
+            since they all show up as credited amounts in the same wallet. A welcome bonus is a
+            one-time, first-deposit event. VIP perks are cumulative and permanent, rising with
+            total activity rather than any single action. Gift codes are one-off and
+            time-limited, released periodically through the platform&apos;s Telegram channel and
+            redeemed manually rather than applied automatically.
+          </p>
+          <p>
+            The distinction matters mainly for expectations. A welcome bonus will not reappear on
+            a second account in most cases, since it is tied to a first deposit rather than a
+            recurring event — the <Link to="/91-club-bonus">bonus page</Link> covers exactly what
+            conditions apply before that amount becomes withdrawable. VIP progress, by contrast,
+            does not reset with inactivity the way a promotional bonus might; it reflects
+            long-term standing, and the <Link to="/91-club-vip">VIP page</Link> maps out what
+            unlocks at each tier, from faster withdrawal review to a more direct support contact.
+          </p>
+          <p>
+            Gift codes are the least predictable of the three by design — they are seasonal, tied
+            to platform milestones, and expire if unredeemed within their stated window. Checking
+            the <Link to="/91-club-gift-code">gift code page</Link> after a code is announced,
+            rather than assuming it will still work a week later, is the only real habit worth
+            building around them. Referral activity adds a fourth, ongoing layer on top of all
+            this, and the <Link to="/91-club-referral">referral page</Link> explains how
+            commission from an invited friend&apos;s activity compounds over time rather than paying
+            out once.
+          </p>
+        </div>
+        <div className={styles.cardsGrid} style={{ marginTop: 8 }}>
+          <div className={styles.card}>
+            <div className={styles.cardIcon}>
+              <GiftIcon />
+            </div>
+            <h3>Welcome Bonus</h3>
+            <p>A one-time first-deposit boost, explained fully on the bonus page.</p>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.cardIcon}>
+              <TrophyIcon />
+            </div>
+            <h3>VIP Perks</h3>
+            <p>Permanent status that rises with cumulative activity over time.</p>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.cardIcon}>
+              <WalletIcon />
+            </div>
+            <h3>Gift Codes</h3>
+            <p>Seasonal, time-limited codes released through the Telegram channel.</p>
+          </div>
+        </div>
+        <div style={{ marginTop: 28 }}>
+          <Link to="/91-club-rewards">
+            <Button variant="outline">See the Full Rewards Breakdown</Button>
           </Link>
         </div>
       </Section>
@@ -581,6 +880,20 @@ export default function Home() {
         eyebrow="Security First"
         title="Your account and balance are protected at every step"
       >
+        <div className={shared.prose} style={{ marginBottom: 28 }}>
+          <p>
+            Security on 91 Club works in layers rather than as a single feature, which is why it
+            is easy to undersell in a short list. Encrypted sessions stop a network intercept from
+            being useful even on a shared connection. Withdrawal verification stops a stolen
+            password from being cashed out instantly, since a request has to clear a check before
+            funds actually move. Fraud monitoring catches the pattern in between — logins from
+            unfamiliar locations, or a sudden change in usual activity — and flags it before
+            either of the first two layers is even tested. None of this needs manual setup; it
+            runs in the background by default. What is worth doing on your end is covered on the{' '}
+            <Link to="/91-club-support">support page</Link>, mainly around what to do if something
+            looks wrong rather than how to configure anything.
+          </p>
+        </div>
         <div className={styles.cardsGrid}>
           <div className={styles.card}>
             <div className={styles.cardIcon}>
@@ -616,7 +929,32 @@ export default function Home() {
         <FAQAccordion faqs={faqs} />
       </Section>
 
+      <Section eyebrow="91 Club Searches" title="People also search for">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+          {relatedSearches.map((item) => (
+            <Link key={item.label} to={item.href}>
+              <Button variant="outline" size="sm">
+                {item.label}
+              </Button>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
       <Section>
+        <p
+          style={{
+            maxWidth: 720,
+            margin: '0 auto 28px',
+            textAlign: 'center',
+            color: 'var(--color-text-muted)',
+            fontSize: 15.5,
+            lineHeight: 1.8
+          }}
+        >
+          Every page linked below connects back to this one, and the reverse is also true — this
+          homepage is meant to work as a hub you return to, not a page you land on once and leave.
+        </p>
         <RelatedLinks
           title="Explore the 91 Club Platform"
           links={[

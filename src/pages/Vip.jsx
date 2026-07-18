@@ -6,6 +6,8 @@ import ComparisonTable from '../components/ui/ComparisonTable.jsx';
 import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import vipRebateRatio from '../assets/screenshots/91club-vip-rebate-ratio-tiers.jpg';
 import { TrophyIcon, WalletIcon, ChatIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -71,6 +73,7 @@ export default function Vip() {
       />
 
       <Section eyebrow="Tier Overview" title="How the VIP ladder is structured">
+        <Screenshot src={vipRebateRatio} alt="91club vip rebate ratio tiers showing commission percentages by level" />
         <ComparisonTable
           caption="91 Club VIP tier overview"
           columns={['Tier', 'Typical Requirement', 'Core Perk']}

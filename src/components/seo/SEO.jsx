@@ -71,14 +71,25 @@ export function buildFaqSchema(faqs) {
   };
 }
 
-export function buildWebPageSchema({ title, description, path }) {
-  return {
+export function buildWebPageSchema({ title, description, path, image }) {
+  const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: title,
     description,
     url: `${SITE_URL}${path}`
   };
+
+  if (image) {
+    schema.primaryImageOfPage = {
+      '@type': 'ImageObject',
+      url: image.startsWith('http') ? image : `${SITE_URL}${image}`,
+      width: 1200,
+      height: 630
+    };
+  }
+
+  return schema;
 }
 
 export function buildSoftwareApplicationSchema({ name, description, path, ratingValue, ratingCount }) {
@@ -122,5 +133,49 @@ export function buildHowToSchema({ name, description, steps }) {
       name: step.title,
       text: step.text
     }))
+  };
+}
+
+export function buildSiteNavigationSchema(links) {
+  return links
+    .filter((link) => !link.href.includes('#'))
+    .map((link) => ({
+      '@context': 'https://schema.org',
+      '@type': 'SiteNavigationElement',
+      name: link.label,
+      url: `${SITE_URL}${link.href}`
+    }));
+}
+
+export function buildItemListSchema({ name, items }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: `${SITE_URL}${item.href}`
+    }))
+  };
+}
+
+export function buildCollectionPageSchema({ name, description, path, items }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url: `${SITE_URL}${path}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        url: `${SITE_URL}${item.href}`
+      }))
+    }
   };
 }

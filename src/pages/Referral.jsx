@@ -9,6 +9,7 @@ import CTABanner from '../components/ui/CTABanner.jsx';
 import Screenshot from '../components/ui/Screenshot.jsx';
 import referralAgencyDashboard from '../assets/screenshots/91club-referral-agency-dashboard.jpg';
 import invitationBonusRewards from '../assets/screenshots/91club-invitation-bonus-rewards.jpg';
+import referralProgramRules from '../assets/screenshots/91club-referral-program-rules.jpg';
 import { UsersIcon, WalletIcon, TrophyIcon } from '../components/illustrations/Icons.jsx';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
@@ -73,6 +74,7 @@ export default function Referral() {
       />
 
       <Section eyebrow="How It Works" title="Turning your invite code into earnings">
+        <Screenshot src={referralProgramRules} alt="91club referral program rules explaining multi-level subordinate commission" />
         <div className={shared.stepGrid}>
           {[
             { title: 'Get Your Invite Code', text: 'Every account receives a unique code automatically after registration.' },

@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Button from '../ui/Button.jsx';
+import { buildSiteNavigationSchema } from '../seo/SEO.jsx';
 import { NAV_LINKS } from '../../data/siteConfig.js';
 import styles from './Header.module.css';
+
+const NAV_SCHEMA = buildSiteNavigationSchema(NAV_LINKS);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +32,15 @@ export default function Header() {
   }, [menuOpen]);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <>
+      <Helmet>
+        {NAV_SCHEMA.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+      </Helmet>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
           <span className={styles.logoMark}>91</span>
@@ -87,5 +99,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }
