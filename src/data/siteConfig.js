@@ -66,8 +66,11 @@ export const ORGANIZATION_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: SITE_NAME,
+  alternateName: '91club',
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.svg`,
+  description:
+    '91 Club is an online gaming platform offering a single account for login, registration, the official app and every game category.',
   sameAs: [TELEGRAM_URL],
   contactPoint: {
     '@type': 'ContactPoint',
@@ -80,7 +83,9 @@ export const WEBSITE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: SITE_NAME,
+  alternateName: '91club',
   url: SITE_URL,
+  inLanguage: 'en-IN',
   potentialAction: {
     '@type': 'SearchAction',
     target: `${SITE_URL}/?q={search_term_string}`,
