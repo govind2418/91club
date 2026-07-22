@@ -100,6 +100,14 @@ export const NAV_LINKS = [
   { label: 'Contact', href: '/91-club-contact' }
 ];
 
+// Priority pages hinted to Google via SiteNavigationElement schema for sitelinks.
+export const SITELINKS = [
+  { label: '91 Club', href: '/' },
+  { label: '91 Club Login', href: '/91-club-login' },
+  { label: '91 Club App', href: '/91-club-app' },
+  { label: '91 Club Games', href: '/91-club-games' }
+];
+
 export const CORE_LINKS = [
   { label: '91 Club Login', href: '/91-club-login' },
   { label: '91 Club Register', href: '/91-club-register' },

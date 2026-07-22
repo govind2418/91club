@@ -3,12 +3,16 @@ import { Link, NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Button from '../ui/Button.jsx';
 import { buildSiteNavigationSchema } from '../seo/SEO.jsx';
-import { NAV_LINKS, REGISTER_URL, LOGIN_URL } from '../../data/siteConfig.js';
+import { NAV_LINKS, SITELINKS, REGISTER_URL, LOGIN_URL } from '../../data/siteConfig.js';
 import logoWebp from '../../assets/brand/91club-logo.webp';
 import logoPng from '../../assets/brand/91club-logo.png';
 import styles from './Header.module.css';
 
-const NAV_SCHEMA = buildSiteNavigationSchema(NAV_LINKS);
+const SCHEMA_NAV_LINKS = [
+  ...SITELINKS,
+  ...NAV_LINKS.filter((link) => !SITELINKS.some((s) => s.href === link.href))
+];
+const NAV_SCHEMA = buildSiteNavigationSchema(SCHEMA_NAV_LINKS);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
