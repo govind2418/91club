@@ -1,13 +1,14 @@
 import Button from './Button.jsx';
+import { REGISTER_URL, LOGIN_URL } from '../../data/siteConfig.js';
 import styles from './CTABanner.module.css';
 
 export default function CTABanner({
   title = 'Ready to start playing?',
   subtitle = 'Create your free account in under a minute and step into the 91 Club experience.',
   primaryLabel = 'Register Now',
-  primaryHref = '/91-club-register',
+  primaryHref = REGISTER_URL,
   secondaryLabel = '91 Club Login',
-  secondaryHref = '/91-club-login'
+  secondaryHref = LOGIN_URL
 }) {
   return (
     <div className={styles.banner}>

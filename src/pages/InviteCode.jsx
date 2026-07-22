@@ -9,7 +9,7 @@ import CTABanner from '../components/ui/CTABanner.jsx';
 import Screenshot from '../components/ui/Screenshot.jsx';
 import inviteFriendsShare from '../assets/screenshots/91club-invite-friends-share.jpg';
 import { UsersIcon, TrophyIcon, WalletIcon } from '../components/illustrations/Icons.jsx';
-import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, REGISTER_URL } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
 
 const breadcrumbItems = [
@@ -69,7 +69,7 @@ export default function InviteCode() {
         title="91 Club Invite Code: What It Does and How to Use One"
         intro="An invite code links a new account to an existing member, unlocking bonuses for both sides. This page explains exactly where to enter one and how to find your own to share."
         primaryLabel="Register With a Code"
-        primaryHref="/91-club-register"
+        primaryHref={REGISTER_URL}
         secondaryLabel="View Referral Program"
         secondaryHref="/91-club-referral"
       />

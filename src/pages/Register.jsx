@@ -9,7 +9,7 @@ import Testimonials from '../components/ui/Testimonials.jsx';
 import Screenshot from '../components/ui/Screenshot.jsx';
 import registrationVerificationSlider from '../assets/screenshots/91club-registration-verification-slider.jpg';
 import { GiftIcon, TrophyIcon, UsersIcon, ShieldIcon } from '../components/illustrations/Icons.jsx';
-import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, REGISTER_URL, LOGIN_URL } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
 
 const breadcrumbItems = [
@@ -88,9 +88,9 @@ export default function Register() {
         title="91 Club Register: Join in Under a Minute"
         intro="Registration is the first step to unlocking colour prediction, lottery, aviator and slot games, along with a welcome bonus and access to our VIP reward ladder. Here is exactly what to expect."
         primaryLabel="Register Now"
-        primaryHref="/91-club-register"
+        primaryHref={REGISTER_URL}
         secondaryLabel="Already Have an Account?"
-        secondaryHref="/91-club-login"
+        secondaryHref={LOGIN_URL}
       />
 
       <Section

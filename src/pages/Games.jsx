@@ -11,6 +11,9 @@ import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import Button from '../components/ui/Button.jsx';
+import Screenshot from '../components/ui/Screenshot.jsx';
+import lotteryGamesLobby from '../assets/screenshots/91club-lottery-games-lobby.jpg';
+import gameLibraryProviders from '../assets/screenshots/91club-game-library-providers.jpg';
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
 
@@ -103,6 +106,16 @@ export default function Games() {
       />
 
       <Section eyebrow="Browse By Category" title="Pick a game format to explore">
+        <div className={shared.mediaPair}>
+          <Screenshot
+            src={lotteryGamesLobby}
+            alt="91club lottery games lobby featuring Win Go, K3, 5D and TRX Wingo"
+          />
+          <Screenshot
+            src={gameLibraryProviders}
+            alt="91club game library showing casino and fishing game providers"
+          />
+        </div>
         <div className={shared.grid3}>
           {categories.map((cat) => (
             <div className={shared.card} key={cat.href}>

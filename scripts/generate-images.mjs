@@ -7,12 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 const publicDir = resolve(root, 'public');
 
-const ogSvg = readFileSync(resolve(publicDir, 'og-cover.svg'));
-await sharp(ogSvg, { density: 220 })
-  .resize(1200, 630)
+const heroSource = resolve(root, 'src/assets/hero/91club-hero-banner.jpg');
+await sharp(heroSource)
+  .resize(1200, 630, { fit: 'cover', position: 'centre' })
   .png({ quality: 90 })
   .toFile(resolve(publicDir, 'og-image.png'));
-console.log('Generated og-image.png (1200x630)');
+console.log('Generated og-image.png (1200x630) from hero banner');
 
 const faviconSvg = readFileSync(resolve(publicDir, 'favicon.svg'));
 await sharp(faviconSvg, { density: 384 })

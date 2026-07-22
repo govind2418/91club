@@ -3,7 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Button from '../ui/Button.jsx';
 import { buildSiteNavigationSchema } from '../seo/SEO.jsx';
-import { NAV_LINKS } from '../../data/siteConfig.js';
+import { NAV_LINKS, REGISTER_URL, LOGIN_URL } from '../../data/siteConfig.js';
+import logoWebp from '../../assets/brand/91club-logo.webp';
+import logoPng from '../../assets/brand/91club-logo.png';
 import styles from './Header.module.css';
 
 const NAV_SCHEMA = buildSiteNavigationSchema(NAV_LINKS);
@@ -43,10 +45,18 @@ export default function Header() {
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
-          <span className={styles.logoMark}>91</span>
-          <span className={styles.logoText}>
-            Club<span className={styles.logoDot}>.</span>
-          </span>
+          <picture>
+            <source srcSet={logoWebp} type="image/webp" />
+            <img
+              src={logoPng}
+              alt="91 Club"
+              className={styles.logoImg}
+              width={421}
+              height={160}
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Primary">
@@ -70,20 +80,20 @@ export default function Header() {
             ))}
           </ul>
           <div className={styles.navActions}>
-            <Button href="/91-club-login" variant="outline" size="sm">
+            <Button href={LOGIN_URL} variant="outline" size="sm">
               Login
             </Button>
-            <Button href="/91-club-register" variant="primary" size="sm">
+            <Button href={REGISTER_URL} variant="primary" size="sm">
               Register
             </Button>
           </div>
         </nav>
 
         <div className={styles.headerActions}>
-          <Button href="/91-club-login" variant="outline" size="sm" className={styles.desktopOnly}>
+          <Button href={LOGIN_URL} variant="outline" size="sm" className={styles.desktopOnly}>
             Login
           </Button>
-          <Button href="/91-club-register" variant="primary" size="sm" className={styles.desktopOnly}>
+          <Button href={REGISTER_URL} variant="primary" size="sm" className={styles.desktopOnly}>
             Register
           </Button>
           <button

@@ -7,7 +7,7 @@ import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import { ShieldIcon, BoltIcon } from '../components/illustrations/Icons.jsx';
-import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, REGISTER_URL } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
 
 const breadcrumbItems = [
@@ -98,7 +98,7 @@ export default function Login() {
         title="91 Club Login: Get Back Into Your Account in Seconds"
         intro="Your 91 Club account is the gateway to every game, bonus and reward on the platform. This page walks through the exact login steps, what to do when something goes wrong, and how to keep your session secure on any device."
         primaryLabel="Go to Register"
-        primaryHref="/91-club-register"
+        primaryHref={REGISTER_URL}
         secondaryLabel="Download the App"
         secondaryHref="/91-club-download"
       />
@@ -201,7 +201,7 @@ export default function Login() {
           title="New here? Create your account first."
           subtitle="Registration takes less than a minute, and you will be logging in with these exact steps right after."
           primaryLabel="Register Now"
-          primaryHref="/91-club-register"
+          primaryHref={REGISTER_URL}
           secondaryLabel="91 Club Support"
           secondaryHref="/91-club-support"
         />

@@ -6,6 +6,8 @@ import {
   TELEGRAM_URL,
   SUPPORT_EMAIL
 } from '../../data/siteConfig.js';
+import logoWebp from '../../assets/brand/91club-logo.webp';
+import logoPng from '../../assets/brand/91club-logo.png';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -17,10 +19,18 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <Link to="/" className={styles.logo}>
-              <span className={styles.logoMark}>91</span>
-              <span>
-                Club<span className={styles.dot}>.</span>
-              </span>
+              <picture>
+                <source srcSet={logoWebp} type="image/webp" />
+                <img
+                  src={logoPng}
+                  alt="91 Club"
+                  className={styles.logoImg}
+                  width={421}
+                  height={160}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </Link>
             <p>
               91 Club works as a single connected system rather than a set of separate pages —

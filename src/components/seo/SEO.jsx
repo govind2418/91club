@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
-import { SITE_NAME, SITE_URL } from '../../data/siteConfig';
+import { SITE_NAME, SITE_URL, SEO_KEYWORDS } from '../../data/siteConfig';
 
 export default function SEO({
   title,
   description,
   path = '/',
   image = '/og-image.png',
+  keywords = SEO_KEYWORDS,
   schemas = []
 }) {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
@@ -16,6 +17,7 @@ export default function SEO({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonical} />
 
       <meta property="og:type" content="website" />

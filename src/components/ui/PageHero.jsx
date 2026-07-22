@@ -1,5 +1,6 @@
 import Breadcrumb from './Breadcrumb.jsx';
 import Button from './Button.jsx';
+import { REGISTER_URL, LOGIN_URL } from '../../data/siteConfig.js';
 import styles from './PageHero.module.css';
 
 export default function PageHero({
@@ -8,9 +9,9 @@ export default function PageHero({
   title,
   intro,
   primaryLabel = 'Register Now',
-  primaryHref = '/91-club-register',
+  primaryHref = REGISTER_URL,
   secondaryLabel = '91 Club Login',
-  secondaryHref = '/91-club-login'
+  secondaryHref = LOGIN_URL
 }) {
   return (
     <div className={styles.hero}>

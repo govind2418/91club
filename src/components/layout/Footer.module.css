@@ -22,25 +22,12 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 19px;
 }
 
-.logoMark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--gradient-primary);
-  font-size: 13px;
-}
-
-.dot {
-  color: var(--color-accent);
+.logoImg {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 .hubList {

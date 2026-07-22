@@ -13,17 +13,31 @@ import CTABanner from '../components/ui/CTABanner.jsx';
 import HeroIllustration from '../components/illustrations/HeroIllustration.jsx';
 import Particles from '../components/layout/Particles.jsx';
 import Screenshot from '../components/ui/Screenshot.jsx';
+import heroBannerWebp from '../assets/hero/91club-hero-banner.webp';
+import heroBannerMobileWebp from '../assets/hero/91club-hero-banner-mobile.webp';
+import heroBannerJpg from '../assets/hero/91club-hero-banner.jpg';
 import gameLobbyHome from '../assets/screenshots/91club-game-lobby-home-screen.jpg';
 import loginScreen from '../assets/screenshots/91club-login-screen.jpg';
 import registerScreen from '../assets/screenshots/91club-register-screen.jpg';
 import accountDashboard from '../assets/screenshots/91club-account-dashboard-features.jpg';
 import walletOverview from '../assets/screenshots/91club-wallet-overview-screen.jpg';
 import bonusCollection from '../assets/screenshots/91club-bonus-collection-rewards.jpg';
-import lotteryGamesLobby from '../assets/screenshots/91club-lottery-games-lobby.jpg';
-import gameLibraryProviders from '../assets/screenshots/91club-game-library-providers.jpg';
 import wheelSpinPrize from '../assets/screenshots/91club-wheel-spin-prize-wheel.jpg';
 import wheelOfFortune from '../assets/screenshots/91club-wheel-of-fortune-spin.jpg';
 import supportCenterHelp from '../assets/screenshots/91club-support-center-help.jpg';
+import winGoGame from '../assets/games/91club-win-go-game.webp';
+import k3Game from '../assets/games/91club-k3-game.webp';
+import fiveDGame from '../assets/games/91club-5d-game.webp';
+import trxWingoGame from '../assets/games/91club-trx-wingo-game.webp';
+import aviatorMiniGame from '../assets/games/91club-aviator-mini-game.webp';
+import pubg1MinGame from '../assets/games/91club-pubg-1min-game.webp';
+import motoRacingGame from '../assets/games/91club-moto-racing-game.webp';
+import vortexGame from '../assets/games/91club-vortex-game.webp';
+import javelinGame from '../assets/games/91club-javelin-game.webp';
+import dragonTigerGame from '../assets/games/91club-dragon-tiger-game.webp';
+import dinosaurTycoonGame from '../assets/games/91club-dinosaur-tycoon-game.webp';
+import liveCasinoGrandGame from '../assets/games/91club-live-casino-grand-game.webp';
+import arbetSportsbookGame from '../assets/games/91club-arbet-sportsbook-game.webp';
 import {
   BoltIcon,
   ShieldIcon,
@@ -35,7 +49,7 @@ import {
   UsersIcon,
   GiftIcon
 } from '../components/illustrations/Icons.jsx';
-import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, REGISTER_URL, LOGIN_URL } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
 import styles from './Home.module.css';
 
@@ -86,6 +100,100 @@ const gameCategories = [
   { name: 'Slots', href: '/91-club-slots' }
 ];
 
+const gameTypes = [
+  {
+    image: winGoGame,
+    tag: 'Colour Prediction',
+    title: 'Win Go',
+    text: '91 Club’s flagship colour prediction game: pick red, green or a number before a short timer runs out. Rounds settle in under a minute.',
+    href: '/91-club-colour-prediction'
+  },
+  {
+    image: k3Game,
+    tag: 'Colour Prediction',
+    title: 'K3',
+    text: 'Three dice roll every round and payouts follow the combined total, size or an exact combination. A quicker, dice-based sibling of Win Go.',
+    href: '/91-club-colour-prediction'
+  },
+  {
+    image: fiveDGame,
+    tag: 'Colour Prediction',
+    title: '5D',
+    text: 'Five digits draw each round, with bets on individual positions, sums or combinations. Rewards players who like tracking patterns over a longer format.',
+    href: '/91-club-colour-prediction'
+  },
+  {
+    image: trxWingoGame,
+    tag: 'Colour Prediction',
+    title: 'TRX Wingo',
+    text: 'The same fast Win Go format, settled on the TRON blockchain for a transparent, verifiable result every round.',
+    href: '/91-club-colour-prediction'
+  },
+  {
+    image: aviatorMiniGame,
+    tag: 'Crash Game',
+    title: 'Aviator',
+    text: 'Watch the multiplier climb after each round starts and cash out before the plane flies off. Timing matters more than luck.',
+    href: '/91-club-aviator'
+  },
+  {
+    image: pubg1MinGame,
+    tag: 'Mini Game',
+    title: 'PUBG 1 Min',
+    text: 'A PUBG-themed instant game with a fresh result every single minute, built for quick, repeated rounds between other games.',
+    href: '/91-club-games'
+  },
+  {
+    image: motoRacingGame,
+    tag: 'Mini Game',
+    title: 'Moto Racing',
+    text: 'Pick a racer and let a short race decide the round’s payout, with the same instant-result pace as the other mini games.',
+    href: '/91-club-games'
+  },
+  {
+    image: vortexGame,
+    tag: 'TB Game',
+    title: 'Vortex',
+    text: 'A spinning multiplier wheel where the ring you land on decides your payout, including bonus multipliers. Built for short, repeatable sessions.',
+    href: '/91-club-games'
+  },
+  {
+    image: javelinGame,
+    tag: 'TB Game',
+    title: 'Javelin',
+    text: 'Time a single throw to land the best distance and multiplier — a skill-timed mini game that is quick to learn and quick to replay.',
+    href: '/91-club-games'
+  },
+  {
+    image: dragonTigerGame,
+    tag: 'Card Game',
+    title: 'Dragon Tiger',
+    text: 'A one-card-each showdown between Dragon and Tiger, with Tie as a third option — the simplest card format on the platform.',
+    href: '/91-club-games'
+  },
+  {
+    image: dinosaurTycoonGame,
+    tag: 'Slots',
+    title: 'Dinosaur Tycoon',
+    text: 'A JILI-powered slot with a prehistoric theme, cascading wins and bonus multipliers — one of the slot library’s most played titles.',
+    href: '/91-club-slots'
+  },
+  {
+    image: liveCasinoGrandGame,
+    tag: 'Live Casino',
+    title: 'MG Live Grand',
+    text: 'A live-dealer table streamed in real time through the MG Live provider, bringing a real-dealer experience without leaving the app.',
+    href: '/91-club-games'
+  },
+  {
+    image: arbetSportsbookGame,
+    tag: 'Sportsbook',
+    title: 'ARBET Sports',
+    text: 'Bet on real football, cricket and other live fixtures using the same wallet as every other 91 Club game.',
+    href: '/91-club-games'
+  }
+];
+
 const relatedSearches = [
   { label: '91club', href: '/' },
   { label: '91 Club Login', href: '/91-club-login' },
@@ -118,6 +226,24 @@ export default function Home() {
         ]}
       />
 
+      <section className={styles.topBanner}>
+        <div className="container">
+          <picture>
+            <source media="(max-width: 720px)" srcSet={heroBannerMobileWebp} type="image/webp" />
+            <source srcSet={heroBannerWebp} type="image/webp" />
+            <img
+              src={heroBannerJpg}
+              alt="91 Club App"
+              width={1536}
+              height={1024}
+              className={styles.topBannerImg}
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
+      </section>
+
       <section className={styles.hero}>
         <Particles />
         <div className={styles.heroGlowA} aria-hidden="true" />
@@ -135,10 +261,10 @@ export default function Home() {
                 registering, getting the official app, or downloading it to your device.
               </p>
               <div className={styles.heroActions}>
-                <Button href="/91-club-register" variant="primary" size="lg">
+                <Button href={REGISTER_URL} variant="primary" size="lg">
                   Register
                 </Button>
-                <Button href="/91-club-login" variant="outline" size="lg">
+                <Button href={LOGIN_URL} variant="outline" size="lg">
                   Login
                 </Button>
                 <Button href="/91-club-download" variant="gold" size="lg">
@@ -165,126 +291,241 @@ export default function Home() {
         </div>
       </section>
 
-      <Section eyebrow="About The Platform" title="What Is 91 Club?">
-        <Screenshot
-          src={gameLobbyHome}
-          alt="91club game lobby home screen showing the anniversary banner, wheel of fortune, VIP privileges and recommended games"
-        />
-        <div className={shared.twoCol}>
+      <Section eyebrow="About The Platform" title="Explore the 91 Club Platform">
+        <details className={styles.startHere}>
+          <summary className={styles.startHereSummary}>Start Here</summary>
+          <ul className={shared.bulletList}>
+            <li>
+              <Link to="/91-club-login">91 Club Login</Link> — sign in to an existing account
+            </li>
+            <li>
+              <Link to="/91-club-register">91 Club Register</Link> — create a new account
+            </li>
+            <li>
+              <Link to="/91-club-app">91 Club App</Link> — see what the app includes
+            </li>
+            <li>
+              <Link to="/91-club-download">91 Club Download</Link> — install it on your device
+            </li>
+            <li>
+              <Link to="/91-club-games">91 Club Games</Link> — browse the full game directory
+            </li>
+          </ul>
+        </details>
+
+        <div className={shared.mediaSplit}>
           <div className={shared.prose}>
             <p>
-              Type &quot;91 Club&quot; into a search bar and you will find a mix of login pages, download
-              links and forum threads, which is exactly why a single reference page is useful.
-              What follows is a plain description of what the platform actually is, how its parts
-              connect to each other, and where to go next if you already know what you are
-              looking for.
+              91 Club is an online gaming platform where players can create a single account to
+              access multiple games, manage their wallet, participate in promotions, and monitor
+              their activity from one place. Whether you&apos;re visiting to{' '}
+              <Link to="/91-club-register">register</Link> for the first time,{' '}
+              <Link to="/91-club-login">sign in</Link> to your account, or{' '}
+              <Link to="/91-club-download">download</Link> the official app, everything is
+              connected through the same platform.
+            </p>
+            <p>
+              Designed for both new and returning players, 91 Club combines a streamlined account
+              system with a variety of game categories, making it easy to move between different
+              experiences without creating separate profiles.
             </p>
 
-            <h3>A single account behind everything</h3>
+            <h3>One Account, Every Feature</h3>
             <p>
-              At its core, 91 Club is a round-based gaming platform: short, repeatable rounds
-              across a handful of formats, all sitting behind one login. That single-account
-              design is deliberate. Instead of separate profiles for each game type, a player{' '}
-              <Link to="/91-club-register">registers once</Link> and that same credential set —
-              mobile number and password — carries across colour prediction, lottery draws, the
-              aviator-style crash format and the slot library. Balance, history and rewards move
-              with the account rather than being split across different game lobbies.
+              Creating a 91 Club account gives you access to the complete platform. After{' '}
+              <Link to="/91-club-register">registering</Link> with your mobile number, the same
+              account works across the website and{' '}
+              <Link to="/91-club-app">official app</Link>, allowing you to manage your wallet,
+              explore games, redeem promotions, and view your account history from a single
+              dashboard.
+            </p>
+            <p>
+              Because everything is linked to one profile, there is no need to maintain separate
+              accounts for different game categories.
             </p>
 
-            <h3>Why &quot;91club&quot; shows up in search bars</h3>
+            <h3>Multiple Games Under One Platform</h3>
             <p>
-              Search habits and mobile keyboards both explain the second spelling. Autocomplete
-              defaults to no-space suggestions, and plenty of players simply type the name the
-              way it sounds rather than the way it is styled. &quot;91club&quot; and &quot;91 Club&quot; are not two
-              competing products or two different sign-in systems; they resolve to the same
-              platform, the same account database and the same support channel. Treat the two
-              spellings as interchangeable rather than as separate brands.
+              91 Club offers several popular gaming categories within one interface. Instead of
+              switching between different websites, players can access their favourite games from
+              the same account and wallet.
             </p>
-
-            <h3>Logging in and setting up an account</h3>
-            <p>
-              <Link to="/91-club-register">Registration</Link> asks for very little: an active
-              mobile number, a password, and confirmation of a one-time code. There is no
-              document upload at the sign-up stage, which keeps the process under a minute for
-              most people. Once an account exists,{' '}
-              <Link to="/91-club-login">logging back in</Link> uses the same two fields, with an
-              added device-verification prompt if the sign-in attempt comes from a phone or
-              browser the system has not seen before. That extra prompt is a security measure, not
-              a bug — it is the main thing standing between a stolen password and an actual
-              account takeover.
-            </p>
-
-            <h3>Getting the app onto a phone</h3>
-            <p>
-              91 Club is fully usable through a mobile browser, so installing anything is
-              optional rather than required. What the{' '}
-              <Link to="/91-club-app">official app</Link> adds is convenience: a home-screen
-              icon, slightly faster navigation between screens, and — on Android — an installable
-              file rather than a browser tab that has to be found again each session. iPhone
-              users get the same functionality by adding the site to their home screen, since
-              there is not a separate iOS build. Either route, including the full{' '}
-              <Link to="/91-club-download">download</Link> steps, lands on the identical account
-              and balance.
-            </p>
-
-            <h3>Games, wallet and where rewards fit in</h3>
-            <p>
-              The game library is organised into a small number of formats rather than an
-              overwhelming catalogue: colour prediction rounds that settle in under a minute,
-              scheduled lottery draws, a rising-multiplier crash game, and a themed slot section —
-              all covered in more depth on the <Link to="/91-club-games">games directory</Link>.
-              Every format draws from the same wallet, so a deposit made for one is available to
-              all the others immediately. Rewards layer on top of that wallet rather than existing
-              separately: a first-deposit bonus for new accounts, ongoing{' '}
-              <Link to="/91-club-vip">VIP perks</Link> tied to activity level, and periodic{' '}
-              <Link to="/91-club-gift-code">gift codes</Link> distributed through the platform&apos;s
-              Telegram channel.
-            </p>
-
-            <h3>Support and the security layer underneath it</h3>
-            <p>
-              Every login session and transaction runs over an encrypted connection, and
-              withdrawal requests pass through a verification step before funds move — standard
-              practice for any platform handling real balances, and explained in full on the{' '}
-              <Link to="/91-club-security">security page</Link>. Support is reachable through an
-              in-account channel and a Telegram community, and both exist mainly to handle the two
-              things that come up most often: a forgotten password and a delayed withdrawal.
-              Neither requires escalation beyond that first contact on the{' '}
-              <Link to="/91-club-support">support page</Link> in most cases.
-            </p>
-
-            <h3>One ecosystem, two entry points</h3>
-            <p>
-              Website and app are best thought of as two doors into the same room rather than two
-              different products. Switching between a desktop browser session and the installed
-              app mid-session does not split the account or reset progress — VIP tier, wallet
-              balance and game history are shared in real time. That is the practical reason this
-              page treats login, registration, the app and the download as parts of one connected
-              system instead of four separate topics: they all point back to the same underlying
-              account. The sections below cover each of those topics in turn, followed by a closer
-              look at platform features, the game directory, rewards and security.
-            </p>
-          </div>
-          <div className={shared.infoBox}>
-            <h3>Start Here</h3>
+            <p>The platform includes categories such as:</p>
             <ul className={shared.bulletList}>
               <li>
-                <Link to="/91-club-login">91 Club Login</Link> — sign in to an existing account
+                <Link to="/91-club-colour-prediction">Colour Prediction</Link>
               </li>
               <li>
-                <Link to="/91-club-register">91 Club Register</Link> — create a new account
+                <Link to="/91-club-lottery">Lottery Games</Link>
               </li>
               <li>
-                <Link to="/91-club-app">91 Club App</Link> — see what the app includes
+                <Link to="/91-club-aviator">Aviator</Link>
               </li>
               <li>
-                <Link to="/91-club-download">91 Club Download</Link> — install it on your device
-              </li>
-              <li>
-                <Link to="/91-club-games">91 Club Games</Link> — browse the full game directory
+                <Link to="/91-club-slots">Slot Games</Link>
               </li>
             </ul>
+            <p>
+              Each category has its own gameplay style while sharing the same balance and account
+              settings, and the full <Link to="/91-club-games">games directory</Link> covers every
+              format in more depth.
+            </p>
+
+            <h3>Simple Registration &amp; Login</h3>
+            <p>
+              Getting started with 91 Club takes only a few steps. New users can{' '}
+              <Link to="/91-club-register">register</Link> using a mobile number and create their
+              account within minutes.
+            </p>
+            <p>
+              Existing members can <Link to="/91-club-login">sign in</Link> anytime using their
+              registered credentials to continue where they left off. Account information, wallet
+              balance, rewards, and game history remain synchronized across supported devices.
+            </p>
+
+            <h3>Official App &amp; Browser Access</h3>
+            <p>
+              91 Club is available through both its mobile-friendly website and the{' '}
+              <Link to="/91-club-app">official application</Link>. Players who prefer faster
+              access can <Link to="/91-club-download">install the app</Link>, while those who
+              don&apos;t want to download anything can continue using the platform directly from
+              their browser.
+            </p>
+            <p>
+              Regardless of how you access 91 Club, your account, wallet, and activity remain
+              exactly the same.
+            </p>
+
+            <h3>Rewards, Wallet &amp; Daily Promotions</h3>
+            <p>
+              Beyond gaming, 91 Club also includes a unified wallet and a range of promotional
+              features. Eligible players may receive welcome{' '}
+              <Link to="/91-club-bonus">rewards</Link>, seasonal campaigns,{' '}
+              <Link to="/91-club-gift-code">gift codes</Link>,{' '}
+              <Link to="/91-club-referral">referral benefits</Link>, and{' '}
+              <Link to="/91-club-vip">VIP advantages</Link> depending on current platform offers.
+            </p>
+            <p>
+              Since all activities are connected to the same account, rewards and wallet
+              transactions are managed from one convenient location.
+            </p>
+
+            <h3>Secure Account Management</h3>
+            <p>
+              Account protection is an important part of the 91 Club experience. Secure login
+              sessions, account verification measures, and encrypted connections help protect user
+              information and account activity, covered in full on the{' '}
+              <Link to="/91-club-security">security page</Link>.
+            </p>
+            <p>
+              Players can also access <Link to="/91-club-support">customer support</Link> whenever
+              they need assistance with login, account access, payments, or general
+              platform-related questions.
+            </p>
+
+            <h3>Everything Connected in One Place</h3>
+            <p>
+              91 Club is designed as a complete gaming ecosystem rather than a collection of
+              separate services. Registration, login, wallet management, promotions, games, and
+              account settings all work together through one unified platform.
+            </p>
+            <p>
+              The sections below provide detailed guides covering account registration, login, app
+              download, game categories, promotions, VIP rewards, security, and other features to
+              help you get the most from your 91 Club experience.
+            </p>
           </div>
+          <Screenshot
+            src={gameLobbyHome}
+            alt="91club game lobby home screen showing the anniversary banner, wheel of fortune, VIP privileges and recommended games"
+          />
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Game Directory"
+        title="91 Club Games"
+        subtitle="Four core categories, one shared account balance. Visit the full directory for details on every format."
+      >
+        <div className={styles.cardsGrid}>
+          <div className={styles.categoryCard}>
+            <span className={styles.categoryTag}>Most Played</span>
+            <h3>Colour Prediction</h3>
+            <p>Predict the outcome of the next colour round and multiply your entry in seconds.</p>
+            <Link to="/91-club-colour-prediction">
+              <Button variant="outline" size="sm">
+                Explore Colour Prediction
+              </Button>
+            </Link>
+          </div>
+          <div className={styles.categoryCard}>
+            <span className={styles.categoryTag}>Classic</span>
+            <h3>Lottery Draws</h3>
+            <p>Pick your numbers and watch scheduled draws unfold with transparent results.</p>
+            <Link to="/91-club-lottery">
+              <Button variant="outline" size="sm">
+                Explore Lottery
+              </Button>
+            </Link>
+          </div>
+          <div className={styles.categoryCard}>
+            <span className={styles.categoryTag}>Trending</span>
+            <h3>Aviator Crash Game</h3>
+            <p>Cash out before the plane flies away in this fast, rising-multiplier format.</p>
+            <Link to="/91-club-aviator">
+              <Button variant="outline" size="sm">
+                Explore Aviator
+              </Button>
+            </Link>
+          </div>
+          <div className={styles.categoryCard}>
+            <span className={styles.categoryTag}>Casual</span>
+            <h3>Slot Games</h3>
+            <p>Spin through a themed slot library with a range of stake sizes and styles.</p>
+            <Link to="/91-club-slots">
+              <Button variant="outline" size="sm">
+                Explore Slots
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <h3 className={styles.gameTypesHeading}>Every Type of Game Inside 91 Club</h3>
+        <div className={styles.gameTypesGrid}>
+          {gameTypes.map((game) => (
+            <Link to={game.href} className={styles.gameTypeCard} key={game.title}>
+              <img
+                src={game.image}
+                alt={`91club ${game.title} game thumbnail`}
+                className={styles.gameTypeImg}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className={styles.gameTypeBody}>
+                <span className={styles.categoryTag}>{game.tag}</span>
+                <h4>{game.title}</h4>
+                <p>{game.text}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className={shared.prose} style={{ marginTop: 28 }}>
+          <p>
+            Picking a starting format usually comes down to pace rather than any real difference
+            in how fair or safe each one is — colour prediction and aviator both reward quick,
+            repeated decisions, lottery suits a slower pick-and-wait rhythm, and slots sit
+            somewhere in between as a lower-pressure option. Whichever format you settle into, the
+            bonuses covered on the <Link to="/91-club-bonus">bonus page</Link> and the periodic
+            codes on the <Link to="/91-club-gift-code">gift code page</Link> apply across all four
+            rather than being tied to one game type, and consistent play in any of them counts
+            toward the progress described on the <Link to="/91-club-vip">VIP page</Link>.
+          </p>
+        </div>
+        <div style={{ marginTop: 20 }}>
+          <Link to="/91-club-games">
+            <Button variant="outline">Browse the Full 91 Club Games Directory</Button>
+          </Link>
         </div>
       </Section>
 
@@ -617,76 +858,6 @@ export default function Home() {
             ))}
           </div>
           <Screenshot src={bonusCollection} alt="91club bonus collection screen listing attendance and deposit rewards" />
-        </div>
-      </Section>
-
-      <Section
-        eyebrow="Game Directory"
-        title="91 Club Games"
-        subtitle="Four core categories, one shared account balance. Visit the full directory for details on every format."
-      >
-        <div className={shared.mediaPair}>
-          <Screenshot src={lotteryGamesLobby} alt="91club lottery games lobby featuring Win Go, K3, 5D and TRX Wingo" />
-          <Screenshot src={gameLibraryProviders} alt="91club game library showing casino and fishing game providers" />
-        </div>
-        <div className={styles.cardsGrid}>
-          <div className={styles.categoryCard}>
-            <span className={styles.categoryTag}>Most Played</span>
-            <h3>Colour Prediction</h3>
-            <p>Predict the outcome of the next colour round and multiply your entry in seconds.</p>
-            <Link to="/91-club-colour-prediction">
-              <Button variant="outline" size="sm">
-                Explore Colour Prediction
-              </Button>
-            </Link>
-          </div>
-          <div className={styles.categoryCard}>
-            <span className={styles.categoryTag}>Classic</span>
-            <h3>Lottery Draws</h3>
-            <p>Pick your numbers and watch scheduled draws unfold with transparent results.</p>
-            <Link to="/91-club-lottery">
-              <Button variant="outline" size="sm">
-                Explore Lottery
-              </Button>
-            </Link>
-          </div>
-          <div className={styles.categoryCard}>
-            <span className={styles.categoryTag}>Trending</span>
-            <h3>Aviator Crash Game</h3>
-            <p>Cash out before the plane flies away in this fast, rising-multiplier format.</p>
-            <Link to="/91-club-aviator">
-              <Button variant="outline" size="sm">
-                Explore Aviator
-              </Button>
-            </Link>
-          </div>
-          <div className={styles.categoryCard}>
-            <span className={styles.categoryTag}>Casual</span>
-            <h3>Slot Games</h3>
-            <p>Spin through a themed slot library with a range of stake sizes and styles.</p>
-            <Link to="/91-club-slots">
-              <Button variant="outline" size="sm">
-                Explore Slots
-              </Button>
-            </Link>
-          </div>
-        </div>
-        <div className={shared.prose} style={{ marginTop: 28 }}>
-          <p>
-            Picking a starting format usually comes down to pace rather than any real difference
-            in how fair or safe each one is — colour prediction and aviator both reward quick,
-            repeated decisions, lottery suits a slower pick-and-wait rhythm, and slots sit
-            somewhere in between as a lower-pressure option. Whichever format you settle into, the
-            bonuses covered on the <Link to="/91-club-bonus">bonus page</Link> and the periodic
-            codes on the <Link to="/91-club-gift-code">gift code page</Link> apply across all four
-            rather than being tied to one game type, and consistent play in any of them counts
-            toward the progress described on the <Link to="/91-club-vip">VIP page</Link>.
-          </p>
-        </div>
-        <div style={{ marginTop: 20 }}>
-          <Link to="/91-club-games">
-            <Button variant="outline">Browse the Full 91 Club Games Directory</Button>
-          </Link>
         </div>
       </Section>
 

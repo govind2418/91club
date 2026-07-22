@@ -13,7 +13,7 @@ import FAQAccordion from '../components/ui/FAQAccordion.jsx';
 import RelatedLinks from '../components/ui/RelatedLinks.jsx';
 import CTABanner from '../components/ui/CTABanner.jsx';
 import { BoltIcon, ShieldIcon, WalletIcon } from '../components/illustrations/Icons.jsx';
-import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '../data/siteConfig.js';
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA, REGISTER_URL } from '../data/siteConfig.js';
 import shared from '../components/ui/PageSections.module.css';
 
 const breadcrumbItems = [
@@ -94,7 +94,7 @@ export default function Download() {
         title="91 Club Download: A Faster Way to Play"
         intro="While 91 Club works great in any mobile browser, downloading the app gives you a one-tap home-screen shortcut, quicker load times and smoother navigation between games."
         primaryLabel="Register Now"
-        primaryHref="/91-club-register"
+        primaryHref={REGISTER_URL}
         secondaryLabel="View APK Details"
         secondaryHref="/91-club-apk"
       />
